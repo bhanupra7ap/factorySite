@@ -87,6 +87,9 @@ const Navbar = () => {
                 <Link to="/wpp-fabric" className="dropdown-item">
                   WPP Fabric
                 </Link>
+                <Link to="/non-woven-bag" className="dropdown-item">
+                  Non Woven Shopping Bags
+                </Link>
               </div>
             )}
           </div>
