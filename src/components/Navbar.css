@@ -1,0 +1,210 @@
+
+.navbar {
+  position: fixed;
+  top: 1vw;
+  left: 1vw;
+  right: 1vw;
+  z-index: 1000;
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(15px);
+  border: 2px solid rgba(255, 140, 0, 0.3);
+  border-radius: 25px;
+  padding: 0 3rem;
+  transition: all 0.3s ease;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+}
+
+.navbar:hover {
+  background: rgba(255, 255, 255, 1);
+  border-color: rgba(255, 140, 0, 0.6);
+  box-shadow: 0 12px 40px rgba(108, 61, 3, 0.2);
+}
+
+.navbar-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0 auto;
+  height: 5vw;
+  min-height: 80px;
+  max-height: 120px;
+}
+
+.navbar-logo {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  color: #000;
+  font-weight: 500;
+  font-size: clamp(1rem, 1.5vw, 1.8rem);
+}
+
+.logo-image {
+  height: clamp(40px, 3vw, 80px);
+  margin-right: 15px;
+}
+
+.logo-text {
+  color: #000000;
+  text-shadow: 0 2px 4px rgba(255, 140, 0, 0.3);
+}
+
+.navbar-menu {
+  display: flex;
+  align-items: center;
+  gap: clamp(0.5rem, 1vw, 1rem);
+  margin-left: auto;
+}
+
+.navbar-item {
+  text-decoration: none;
+  color: #000;
+  font-weight: 600;
+  padding: clamp(0.5rem, 1vw, 1rem) clamp(0.8rem, 1.5vw, 1.5rem);
+  border-radius: 18px;
+  transition: all 0.3s ease;
+  position: relative;
+  font-size: clamp(0.8rem, 1.2vw, 1.4rem);
+  border: 2px solid transparent;
+}
+
+.navbar-item:hover {
+  background: linear-gradient(135deg, #ff8c00, #ff6b00);
+  color: #fff;
+  transform: translateY(-3px);
+  border-color: #ff8c00;
+  box-shadow: 0 6px 20px rgba(255, 140, 0, 0.4);
+}
+
+.navbar-dropdown {
+  position: relative;
+}
+
+.dropdown-trigger {
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: clamp(0.5rem, 1vw, 1rem);
+  color: #000;
+  font-size: clamp(0.8rem, 1.2vw, 1.4rem);
+  font-weight: 600;
+  padding: clamp(0.5rem, 1vw, 1rem) clamp(0.8rem, 1.5vw, 1.5rem);
+}
+
+.dropdown-arrow {
+  font-size: clamp(0.6rem, 0.8vw, 1rem);
+  transition: transform 0.3s ease;
+}
+
+.navbar-dropdown:hover .dropdown-arrow {
+  transform: rotate(180deg);
+}
+
+.dropdown-menu {
+  position: absolute;
+  top: 120%;
+  left: 0;
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(15px);
+  border-radius: 18px;
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.2);
+  padding: 1rem 0;
+  min-width: clamp(150px, 20vw, 220px);
+  border: 2px solid rgba(255, 140, 0, 0.3);
+  animation: dropdownFadeIn 0.3s ease;
+}
+
+@keyframes dropdownFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-15px) scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+.dropdown-item {
+  display: block;
+  padding: clamp(0.8rem, 1.2vw, 1.2rem) clamp(1rem, 1.8vw, 1.8rem);
+  text-decoration: none;
+  color: #000;
+  transition: all 0.3s ease;
+  font-weight: 500;
+  font-size: clamp(0.7rem, 1vw, 1.2rem);
+  border-left: 4px solid transparent;
+}
+
+.dropdown-item:hover {
+  background: linear-gradient(90deg, rgba(255, 140, 0, 0.2), transparent);
+  color: #ff8c00;
+  border-left-color: #ff8c00;
+  transform: translateX(8px);
+}
+
+@media (max-width: 768px) {
+  .navbar {
+    top: 10px;
+    left: 10px;
+    right: 10px;
+    padding: 0 1.5rem;
+  }
+  
+  .navbar-container {
+    height: 80px;
+    min-height: 70px;
+    max-height: 90px;
+  }
+  
+  .navbar-menu {
+    gap: 0.4rem;
+  }
+  
+  .navbar-item {
+    padding: 0.5rem 0.7rem;
+    font-size: clamp(0.7rem, 2.5vw, 1rem);
+  }
+  
+  .dropdown-trigger {
+    font-size: clamp(0.7rem, 2.5vw, 1rem);
+    padding: 0.5rem 0.7rem;
+  }
+  
+  .dropdown-menu {
+    min-width: clamp(130px, 40vw, 180px);
+  }
+  
+  .dropdown-item {
+    font-size: clamp(0.6rem, 2vw, 0.9rem);
+    padding: 0.6rem 1rem;
+  }
+  
+  .logo-text {
+    display: none;
+  }
+  
+  .navbar-logo {
+    font-size: clamp(0.9rem, 3.5vw, 1.3rem);
+  }
+  
+  .logo-image {
+    height: clamp(30px, 8vw, 50px);
+  }
+}
+
+@media (max-width: 480px) {
+  .navbar-item {
+    font-size: clamp(0.6rem, 3vw, 0.9rem);
+    padding: 0.4rem 0.6rem;
+  }
+  
+  .dropdown-trigger {
+    font-size: clamp(0.6rem, 3vw, 0.9rem);
+    padding: 0.4rem 0.6rem;
+  }
+  
+  .navbar-logo {
+    font-size: clamp(0.8rem, 4vw, 1.1rem);
+  }
+}

@@ -1,0 +1,265 @@
+.App {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background: #ffffff;
+}
+
+.main-content {
+  flex: 1;
+  min-height: calc(100vh - 130px);
+  background: #ffffff;
+}
+
+.page {
+  min-height: calc(100vh - 130px);
+  background: #ffffff;
+}
+
+.header-image {
+  width: 100%;
+  height: 30vw;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  margin-top: -130px;
+  padding-top: 130px;
+  margin-bottom: 3rem;
+  overflow: hidden;
+}
+
+.header-image::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.4);
+}
+
+.header-title {
+  position: relative;
+  z-index: 2;
+  color: #ffffff;
+  font-size: 3.5rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+  text-align: center;
+  
+  /* PowerPoint-style emerging animation */
+  opacity: 0;
+  transform: translateY(60px) scale(0.7);
+  animation: emergeTitle 1.5s cubic-bezier(0.175, 0.885, 0.32, 1.275) 0.5s forwards;
+}
+
+/* Main emerging animation - like PowerPoint "Fly In" effect */
+@keyframes emergeTitle {
+  0% {
+    opacity: 0;
+    transform: translateY(60px) scale(0.7);
+  }
+  40% {
+    opacity: 0.6;
+    transform: translateY(20px) scale(0.85);
+  }
+  70% {
+    opacity: 0.9;
+    transform: translateY(-5px) scale(1.02);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+/* Alternative animations - uncomment to use different effects */
+
+/* Slide from left animation */
+.header-title.slide-left {
+  transform: translateX(-100px) scale(0.8);
+  animation: slideFromLeft 1.2s ease-out 0.3s forwards;
+}
+
+@keyframes slideFromLeft {
+  0% {
+    opacity: 0;
+    transform: translateX(-100px) scale(0.8);
+  }
+  60% {
+    opacity: 0.8;
+    transform: translateX(10px) scale(1.05);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0) scale(1);
+  }
+}
+
+/* Zoom and fade animation */
+.header-title.zoom-fade {
+  transform: scale(0.3);
+  animation: zoomFade 1.8s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0.4s forwards;
+}
+
+@keyframes zoomFade {
+  0% {
+    opacity: 0;
+    transform: scale(0.3);
+  }
+  50% {
+    opacity: 0.7;
+    transform: scale(1.1);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* Typewriter effect */
+.header-title.typewriter {
+  border-right: 3px solid #ffffff;
+  white-space: nowrap;
+  overflow: hidden;
+  width: 0;
+  animation: typewriter 2s steps(40) 0.5s forwards,
+             blinkCursor 0.8s infinite;
+}
+
+@keyframes typewriter {
+  from { width: 0; }
+  to { width: 100%; }
+}
+
+@keyframes blinkCursor {
+  0%, 50% { border-color: #ffffff; }
+  51%, 100% { border-color: transparent; }
+}
+
+/* Bounce in animation */
+.header-title.bounce-in {
+  transform: scale(0.3) translateY(-100px);
+  animation: bounceIn 1.5s cubic-bezier(0.68, -0.55, 0.265, 1.55) 0.3s forwards;
+}
+
+@keyframes bounceIn {
+  0% {
+    opacity: 0;
+    transform: scale(0.3) translateY(-100px);
+  }
+  50% {
+    opacity: 0.8;
+    transform: scale(1.05) translateY(10px);
+  }
+  70% {
+    transform: scale(0.98) translateY(-5px);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+}
+
+/* Rotate and fade animation */
+.header-title.rotate-fade {
+  transform: rotateY(90deg) scale(0.5);
+  animation: rotateFade 1.6s ease-out 0.4s forwards;
+}
+
+@keyframes rotateFade {
+  0% {
+    opacity: 0;
+    transform: rotateY(90deg) scale(0.5);
+  }
+  60% {
+    opacity: 0.8;
+    transform: rotateY(-10deg) scale(1.05);
+  }
+  100% {
+    opacity: 1;
+    transform: rotateY(0deg) scale(1);
+  }
+}
+
+.content {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 3rem;
+  background: #ffffff;
+}
+
+.content h2 {
+  color: #ff8c00;
+  margin-bottom: 2rem;
+  font-size: 2.5rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  position: relative;
+}
+
+.content h2::after {
+  content: '';
+  position: absolute;
+  bottom: -10px;
+  left: 0;
+  width: 80px;
+  height: 4px;
+  background: linear-gradient(90deg, #ff8c00, #ff6b00);
+  border-radius: 2px;
+}
+
+.content p {
+  color: #333;
+  line-height: 1.8;
+  font-size: 1.2rem;
+  background: #f9f9f9;
+  padding: 2rem;
+  border-radius: 15px;
+  border-left: 5px solid #ff8c00;
+  margin-top: 1rem;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+@media (max-width: 768px) {
+  .header-image {
+    height: 200px;
+    margin-bottom: 2rem;
+    margin-top: -110px;
+    padding-top: 110px;
+  }
+  
+  .header-title {
+    font-size: 2.5rem;
+  }
+  
+  .content {
+    padding: 0 1rem;
+  }
+  
+  .content h2 {
+    font-size: 2rem;
+  }
+  
+  .content p {
+    font-size: 1rem;
+    padding: 1.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .header-image {
+    height: 150px;
+  }
+  
+  .header-title {
+    font-size: 2rem;
+  }
+}
