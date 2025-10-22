@@ -1,10 +1,12 @@
+import headerImg from "../assets/quality-header.avif";
+
 const Quality = () => {
   return (
     <div className="page">
       <div 
         className="header-image" 
         style={{
-          backgroundImage: `url('https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80')`
+          backgroundImage: `url(${headerImg})`
         }}
       >
         <h1 className="header-title">Quality Assurance</h1>

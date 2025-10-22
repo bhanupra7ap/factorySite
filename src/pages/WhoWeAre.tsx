@@ -1,10 +1,12 @@
+import headerImg from "../assets/who-we-are-header.avif";
+
 const WhoWeAre = () => {
   return (
     <div className="page">
       <div 
         className="header-image" 
         style={{
-          backgroundImage: `url('https://images.unsplash.com/photo-1521737711867-e3b97375f902?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80')`
+          backgroundImage: `url(${headerImg})`
         }}
       >
         <h1 className="header-title">Who We Are</h1>

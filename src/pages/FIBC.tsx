@@ -1,10 +1,12 @@
+import headerImg from "../assets/fibc-header.jpg";
+
 const FIBC = () => {
   return (
     <div className="page">
       <div 
         className="header-image" 
         style={{
-          backgroundImage: `url('https://images.unsplash.com/photo-1553664441-4ccd27da5af3?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80')`
+          backgroundImage: `url(${headerImg})`
         }}
       >
         <h1 className="header-title">FIBC Products</h1>

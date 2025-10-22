@@ -1,10 +1,12 @@
+import headerImg from "../assets/facilities-header.avif";
+
 const Facilities = () => {
   return (
     <div className="page">
       <div 
         className="header-image" 
         style={{
-          backgroundImage: `url('https://images.unsplash.com/photo-1565043589221-1a6fd9ae45c7?ixlib=rb-4.0.3&auto=format&fit=crop&w=2068&q=80')`
+          backgroundImage: `url(${headerImg})`
         }}
       >
         <h1 className="header-title">Our Facilities</h1>

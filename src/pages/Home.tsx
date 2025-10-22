@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import "./Home.css";
+import headerImg from "../assets/home-header.avif";
 
 const Home = () => {
   const cards = [
@@ -33,7 +34,7 @@ const Home = () => {
       <div
         className="header-image"
         style={{
-          backgroundImage: `url('https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80')`,
+          backgroundImage: `url(${headerImg})`,
         }}
       >
         <h1 className="header-title">FIBC manufacturers and exporters</h1>

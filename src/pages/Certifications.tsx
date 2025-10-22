@@ -1,10 +1,12 @@
+import headerImg from "../assets/certification-header.avif";
+
 const Certifications = () => {
   return (
     <div className="page">
       <div 
         className="header-image" 
         style={{
-          backgroundImage: `url('https://images.unsplash.com/photo-1560472355-536de3962603?ixlib=rb-4.0.3&auto=format&fit=crop&w=2126&q=80')`
+          backgroundImage: `url(${headerImg})`
         }}
       >
         <h1 className="header-title">Certifications</h1>
