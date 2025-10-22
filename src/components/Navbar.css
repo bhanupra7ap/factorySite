@@ -208,3 +208,78 @@
     font-size: clamp(0.8rem, 4vw, 1.1rem);
   }
 }
+
+/* Hamburger button base - hidden on desktop */
+.hamburger {
+  display: none;
+  position: relative;
+  width: 40px;
+  height: 28px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+}
+.hamburger span {
+  display: block;
+  height: 3px;
+  width: 100%;
+  background: #222;
+  border-radius: 2px;
+  transition: transform 0.25s ease, opacity 0.2s ease;
+}
+.hamburger.active span:nth-child(1) {
+  transform: translateY(10px) rotate(45deg);
+}
+.hamburger.active span:nth-child(2) {
+  opacity: 0;
+}
+.hamburger.active span:nth-child(3) {
+  transform: translateY(-10px) rotate(-45deg);
+}
+
+@media (max-width: 768px) {
+  .hamburger {
+    display: flex;
+  }
+
+  /* By default keep desktop inline menu (so no duplication), but hide it in container flow when not open */
+  .navbar > .navbar-container > .navbar-menu {
+    display: none; /* hide inline menu inside the container on small screens */
+  }
+
+  /* When open, show overlay full-screen menu */
+  .navbar-menu.open {
+    display: flex !important;
+    position: fixed;
+    inset: 0;
+    margin: 0;
+    padding: 5.5rem 1.5rem 2rem 1.5rem;
+    flex-direction: column;
+    gap: 0.5rem;
+    background: rgba(255,255,255,0.98);
+    backdrop-filter: blur(8px);
+    z-index: 2000;
+    overflow-y: auto;
+    align-items: stretch;
+  }
+
+  .navbar-menu.open .navbar-item {
+    width: 100%;
+    padding: 1rem;
+    border-radius: 12px;
+    font-size: 1rem;
+    margin-bottom: 0.25rem;
+  }
+
+  .navbar-menu.open .navbar-dropdown .dropdown-menu {
+    position: static;
+    box-shadow: none;
+    border-radius: 8px;
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+    margin-bottom: 0.5rem;
+  }
+}
