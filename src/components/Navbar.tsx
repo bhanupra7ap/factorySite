@@ -67,6 +67,15 @@ const Navbar = () => {
         </button>
 
         <div className={`navbar-menu ${isMobileOpen ? 'open' : ''}`}>
+          {isMobileOpen && (
+            <button
+              className="mobile-close"
+              aria-label="Close menu"
+              onClick={() => setIsMobileOpen(false)}
+            >
+              ×
+            </button>
+          )}
           <Link to="/" className="navbar-item">
             Home
           </Link>
