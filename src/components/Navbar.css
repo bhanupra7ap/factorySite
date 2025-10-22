@@ -1,23 +1,50 @@
 
 .navbar {
-  position: fixed;
-  top: 1vw;
-  left: 1vw;
-  right: 1vw;
   z-index: 1000;
   background: rgba(255, 255, 255, 0.95);
   backdrop-filter: blur(15px);
   border: 2px solid rgba(255, 140, 0, 0.3);
   border-radius: 25px;
   padding: 0 3rem;
-  transition: all 0.3s ease;
-  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+  transition: transform 0.28s cubic-bezier(.2,.8,.2,1), box-shadow 0.28s ease, background 0.28s ease, width 0.28s ease, left 0.28s ease, right 0.28s ease;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.08);
 }
 
 .navbar:hover {
   background: rgba(255, 255, 255, 1);
   border-color: rgba(255, 140, 0, 0.6);
   box-shadow: 0 12px 40px rgba(108, 61, 3, 0.2);
+}
+
+/* When user scrolls, make the navbar pop a little to appear floating */
+.navbar.scrolled {
+  transform: translateY(-6px);
+  box-shadow: 0 18px 50px rgba(0, 0, 0, 0.18);
+  background: rgba(255,255,255,0.98);
+  border-color: rgba(255,140,0,0.6);
+}
+
+/* Full-width top appearance when at the very top of the page
+   When fixed, we rely on the JS in Navbar.tsx to set --navbar-height
+   so the rest of the page can be offset using that value. */
+.navbar.full {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  margin: 0;
+  border-radius: 0; /* full width, no rounded corners */
+  padding: 0.6rem 2rem;
+  box-shadow: 0 6px 24px rgba(0,0,0,0.12);
+}
+
+/* Floating/inset look when the user scrolls away from top */
+.navbar.floating {
+  position: sticky;
+  top: 12px;
+  margin: 0 1vw;
+  border-radius: 25px;
+  padding: 0 3rem;
 }
 
 .navbar-container {

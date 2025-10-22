@@ -4,6 +4,8 @@ import logo from '../assets/logo.png';
 import './Navbar.css';
 
 const Navbar = () => {
+  const [isScrolled, setIsScrolled] = useState(false);
+  const [isAtTop, setIsAtTop] = useState(true);
   const [isAboutOpen, setIsAboutOpen] = useState(false);
   const [isProductsOpen, setIsProductsOpen] = useState(false);
   const [isMobileOpen, setIsMobileOpen] = useState(false);
@@ -94,6 +96,21 @@ const Navbar = () => {
     setIsMobileOpen((s) => !s);
   };
 
+  // expose navbar height as a CSS variable when mounted or resized
+  const navRef = useRef<HTMLElement | null>(null);
+  useEffect(() => {
+    const setNavHeightVar = () => {
+      if (navRef.current) {
+        const h = navRef.current.getBoundingClientRect().height;
+        document.documentElement.style.setProperty('--navbar-height', `${Math.ceil(h)}px`);
+      }
+    };
+    setNavHeightVar();
+    const ro = new ResizeObserver(setNavHeightVar);
+    if (navRef.current) ro.observe(navRef.current);
+    return () => ro.disconnect();
+  }, []);
+
   useEffect(() => {
     return () => {
       if (aboutTimeoutRef.current) clearTimeout(aboutTimeoutRef.current);
@@ -103,8 +120,33 @@ const Navbar = () => {
     };
   }, []);
 
+  // Track scroll to add a subtle floating/stuck effect
+  useEffect(() => {
+    const onScroll = () => {
+      const scrolled = window.scrollY > 8; // small threshold
+      setIsScrolled(scrolled);
+      setIsAtTop(window.scrollY <= 8);
+    };
+    window.addEventListener('scroll', onScroll, { passive: true });
+    // initial check
+    onScroll();
+    return () => window.removeEventListener('scroll', onScroll);
+  }, []);
+
+  // add/remove a root class to allow global CSS to react when navbar is fixed
+  useEffect(() => {
+    const className = 'navbar-is-fixed';
+    const root = document.documentElement;
+    if (isAtTop) {
+      root.classList.add(className);
+    } else {
+      root.classList.remove(className);
+    }
+    return () => root.classList.remove(className);
+  }, [isAtTop]);
+
   return (
-    <nav className="navbar">
+  <nav ref={navRef} className={`navbar ${isAtTop ? 'full' : ''} ${!isAtTop && !isMobileOpen ? 'floating' : ''} ${isScrolled ? 'scrolled' : ''}`}>
       <div className="navbar-container">
         <Link to="/" className="navbar-logo">
           <img src={logo} alt="Company Logo" className="logo-image" />

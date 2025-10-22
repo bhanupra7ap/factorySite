@@ -11,6 +11,17 @@
   background: #ffffff;
 }
 
+/* If the navbar sets a --navbar-height (via JS), ensure main content is pushed below it when navbar is fixed. */
+:root {
+  --navbar-height: 0px;
+}
+
+/* When the navbar is in its fixed/full state we add the class to :root and
+   apply top padding to the main content so it sits below the navbar. */
+:root.navbar-is-fixed .main-content {
+  padding-top: var(--navbar-height);
+}
+
 .page {
   min-height: calc(100vh - 130px);
   background: #ffffff;
@@ -26,8 +37,10 @@
   align-items: center;
   justify-content: center;
   position: relative;
-  margin-top: -130px;
-  padding-top: 130px;
+  /* Use the measured navbar height to offset the header when navbar is fixed. */
+  /* Fallback to 130px for older browsers or when JS hasn't run yet. */
+  margin-top: calc(var(--navbar-height, 130px) * -1);
+  padding-top: var(--navbar-height, 130px);
   margin-bottom: 3rem;
   overflow: hidden;
 }
@@ -243,8 +256,9 @@
   .header-image {
     height: 200px;
     margin-bottom: 2rem;
-    margin-top: -110px;
-    padding-top: 110px;
+    /* On mobile we don't pull the header up behind the navbar — keep it below */
+    margin-top: 0;
+    padding-top: var(--navbar-height, 110px);
   }
   
   .header-title {
