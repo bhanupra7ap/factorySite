@@ -48,6 +48,8 @@
   color: #ff8c00;
 }
 
+/* --- Social Section --- */
+
 .social-section {
   text-align: center;
   margin-bottom: 2rem;
@@ -76,14 +78,17 @@
   color: white;
   border-radius: 50%;
   text-decoration: none;
+  font-size: 1.4rem;
   transition: all 0.3s ease;
 }
 
+/* Hover animation */
 .social-links a:hover {
   background: #ff6b00;
-  transform: translateY(-2px);
+  transform: translateY(-2px) scale(1.1);
 }
 
+/* --- Footer Bottom --- */
 .footer-bottom {
   border-top: 1px solid rgba(255, 140, 0, 0.3);
   padding-top: 1.5rem;
@@ -91,16 +96,17 @@
   color: #666;
 }
 
+/* --- Responsive --- */
 @media (max-width: 768px) {
   .footer-container {
     padding: 0 1rem;
   }
-  
+
   .footer-content {
     grid-template-columns: 1fr;
     gap: 1.5rem;
   }
-  
+
   .social-links {
     justify-content: center;
   }

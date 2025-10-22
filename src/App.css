@@ -216,6 +216,17 @@
   border-radius: 2px;
 }
 
+.content h3 {
+  color: #ff8c00;
+  margin-bottom: 1rem;
+  font-size: 1.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  position: relative;
+}
+
+
 .content p {
   color: #333;
   line-height: 1.8;

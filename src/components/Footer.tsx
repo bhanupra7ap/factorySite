@@ -1,4 +1,5 @@
 import './Footer.css';
+import { FaLinkedin, FaFacebook, FaTwitter, FaInstagram } from 'react-icons/fa';
 
 const Footer = () => {
   return (
@@ -9,7 +10,7 @@ const Footer = () => {
             <h3>Contact Information</h3>
             <div className="contact-item">
               <span className="contact-icon">📞</span>
-              <span>+1 (555) 123-4567</span>
+              <span>+91-8604951812</span>
             </div>
             <div className="contact-item">
               <span className="contact-icon">✉️</span>
@@ -17,7 +18,7 @@ const Footer = () => {
             </div>
             <div className="contact-item">
               <span className="contact-icon">🌐</span>
-              <span>www.factoryname.com</span>
+              <span>www.varunapolypack.com</span>
             </div>
           </div>
           
@@ -26,10 +27,8 @@ const Footer = () => {
             <div className="address">
               <span className="contact-icon">📍</span>
               <div>
-                <p>123 Industrial Avenue</p>
-                <p>Manufacturing District</p>
-                <p>City, State 12345</p>
-                <p>Country</p>
+                <p>Varanasi, Uttar Pradesh</p>
+                <p>India</p>
               </div>
             </div>
           </div>
@@ -47,9 +46,18 @@ const Footer = () => {
         <div className="social-section">
           <h3>Follow Us</h3>
           <div className="social-links">
-            <a href="#" className="social-link">LinkedIn</a>
-            <a href="#" className="social-link">Facebook</a>
-            <a href="#" className="social-link">Twitter</a>
+            <a href="https://linkedin.com" className="social-link" aria-label="LinkedIn">
+              <FaLinkedin />
+            </a>
+            <a href="https://facebook.com" className="social-link" aria-label="Facebook">
+              <FaFacebook />
+            </a>
+            <a href="https://twitter.com" className="social-link" aria-label="Twitter">
+              <FaTwitter />
+            </a>
+            <a href="https://instagram.com" className="social-link" aria-label="Instagram">
+              <FaInstagram />
+            </a>
           </div>
         </div>
       </div>
