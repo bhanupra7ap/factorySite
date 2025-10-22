@@ -9,6 +9,10 @@ const Navbar = () => {
   const [isMobileOpen, setIsMobileOpen] = useState(false);
   const aboutTimeoutRef = useRef<NodeJS.Timeout | null>(null);
   const productsTimeoutRef = useRef<NodeJS.Timeout | null>(null);
+  const aboutTouchOpenedRef = useRef(false);
+  const productsTouchOpenedRef = useRef(false);
+  const aboutTouchClearRef = useRef<NodeJS.Timeout | null>(null);
+  const productsTouchClearRef = useRef<NodeJS.Timeout | null>(null);
 
   const handleAboutMouseEnter = () => {
     if (aboutTimeoutRef.current) {
@@ -21,6 +25,24 @@ const Navbar = () => {
     aboutTimeoutRef.current = setTimeout(() => {
       setIsAboutOpen(false);
     }, 300); // 300ms delay
+  };
+
+  // Open dropdown on single tap for touch devices.
+  // We use onTouchStart to open the menu immediately and prevent the subsequent onClick
+  // from toggling it closed (which causes the double-tap issue).
+  const handleAboutTouchStart = (e: React.TouchEvent) => {
+    // If already open, let the click toggle/close it as normal.
+    if (!isAboutOpen) {
+      e.preventDefault();
+      setIsAboutOpen(true);
+      // Mark that we opened via touch so the subsequent click doesn't toggle it closed.
+      aboutTouchOpenedRef.current = true;
+      if (aboutTouchClearRef.current) clearTimeout(aboutTouchClearRef.current);
+      aboutTouchClearRef.current = setTimeout(() => {
+        aboutTouchOpenedRef.current = false;
+        aboutTouchClearRef.current = null;
+      }, 700);
+    }
   };
 
   const handleProductsMouseEnter = () => {
@@ -36,6 +58,38 @@ const Navbar = () => {
     }, 300); // 300ms delay
   };
 
+  const handleProductsTouchStart = (e: React.TouchEvent) => {
+    if (!isProductsOpen) {
+      e.preventDefault();
+      setIsProductsOpen(true);
+      productsTouchOpenedRef.current = true;
+      if (productsTouchClearRef.current) clearTimeout(productsTouchClearRef.current);
+      productsTouchClearRef.current = setTimeout(() => {
+        productsTouchOpenedRef.current = false;
+        productsTouchClearRef.current = null;
+      }, 700);
+    }
+  };
+
+  const handleAboutClick = (e: React.MouseEvent) => {
+    // If we just opened via touch, ignore the click that follows to avoid immediate toggle-close.
+    if (aboutTouchOpenedRef.current) {
+      aboutTouchOpenedRef.current = false;
+      e.preventDefault();
+      return;
+    }
+    setIsAboutOpen((s) => !s);
+  };
+
+  const handleProductsClick = (e: React.MouseEvent) => {
+    if (productsTouchOpenedRef.current) {
+      productsTouchOpenedRef.current = false;
+      e.preventDefault();
+      return;
+    }
+    setIsProductsOpen((s) => !s);
+  };
+
   const toggleMobileMenu = () => {
     setIsMobileOpen((s) => !s);
   };
@@ -44,6 +98,8 @@ const Navbar = () => {
     return () => {
       if (aboutTimeoutRef.current) clearTimeout(aboutTimeoutRef.current);
       if (productsTimeoutRef.current) clearTimeout(productsTimeoutRef.current);
+      if (aboutTouchClearRef.current) clearTimeout(aboutTouchClearRef.current);
+      if (productsTouchClearRef.current) clearTimeout(productsTouchClearRef.current);
     };
   }, []);
 
@@ -87,7 +143,8 @@ const Navbar = () => {
           >
             <span
               className="navbar-item dropdown-trigger"
-              onClick={() => setIsAboutOpen((s) => !s)}
+              onClick={handleAboutClick}
+              onTouchStart={handleAboutTouchStart}
             >
               About <span className="dropdown-arrow">▼</span>
             </span>
@@ -110,7 +167,8 @@ const Navbar = () => {
           >
             <span
               className="navbar-item dropdown-trigger"
-              onClick={() => setIsProductsOpen((s) => !s)}
+              onClick={handleProductsClick}
+              onTouchStart={handleProductsTouchStart}
             >
               Products <span className="dropdown-arrow">▼</span>
             </span>
