@@ -12,8 +12,12 @@ const WhoWeAre = () => {
         <h1 className="header-title">Who We Are</h1>
       </div>
       <div className="content">
-        <h2>About Our Company</h2>
-        <p>Learn about our company and our mission. This is the Who We Are page. Content will be added later.</p>
+        <h2>About Us</h2>
+        <p>We are one of the leading manufacturers and exporters of FIBC (Flexible
+            Intermediate Bulk Containers) also known as Jumbo Bags, Bulk Bags, or
+            Big Bags. Our products are designed to meet the highest standards of
+            quality and safety, ensuring reliable storage and transportation
+            solutions for various industries.</p>
       </div>
     </div>
   );

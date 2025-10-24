@@ -1,33 +1,93 @@
-import { useEffect, useState } from "react";
 import "./Home.css";
 import headerImg from "../assets/home-header.avif";
+import facilitiesImg from "../assets/facilities-header.avif";
+import qualityImg from "../assets/quality-header.avif";
+import nonWovenImg from "../assets/non-woven-header.avif";
+import wppFabricImg from "../assets/wpp-fabric-header.avif";
+import { useEffect, useRef, useState } from "react";
+
+type TimelineItem = {
+  title: string;
+  text: string;
+  image: string;
+};
 
 const Home = () => {
-  const cards = [
+  // Predefined principles data — length is dynamic and will control rendering
+  const timeline: TimelineItem[] = [
     {
-      title: "Quality Materials",
-      text: "We use industry-grade polypropylene and performance fabrics to manufacture durable FIBC solutions for demanding applications.",
+      title: "Integrated Manufacturing from Tape to FIBC Bags",
+      text: "At Varuna Packtech, we believe that control over the process leads to control over quality. \
+            Our operations are vertically connected — starting with tape extrusion, followed by weaving high-strength polypropylene fabric, and finally converting it into durable and customizable FIBC bags. \
+            This in-house integration allows us to maintain consistent quality, flexible production planning, and better cost efficiency for our customers. \
+            Our current capacity supports a wide range of industrial and export-grade FIBC solutions, designed to meet the specific requirements of clients in sectors like agriculture, chemicals, construction, and food processing.",
+      image: facilitiesImg,
     },
     {
-      title: "Custom Designs",
-      text: "Custom capacities, lifting loops, linings and discharge options to suit your handling and storage requirements.",
+      title: "Committed to Responsible Manufacturing",
+      text: "Sustainability is not an afterthought for us — it's a part of how we operate every day. \
+            We focus on reducing waste, optimizing resource usage, and promoting renewable energy within our operations. \
+            We have implemented waste segregation and recycling systems to ensure that all process waste is reused effectively. \
+            A portion of our energy needs is already met through solar installations, and we continue to expand our renewable energy footprint each year. \
+            Our water management practices emphasize reuse and responsible discharge through treatment and rainwater harvesting systems. \
+            By taking steady, practical steps, we aim to build a manufacturing environment that balances growth with environmental care.",
+      image: qualityImg,
     },
     {
-      title: "Global Shipping",
-      text: "Reliable export logistics and international compliance to deliver our products to customers worldwide.",
+      title: "Adopting Technology for Smarter Production",
+      text: "Technology plays a key role in improving our efficiency, consistency, and responsiveness to customer needs. \
+            Our manufacturing setup uses modern extrusion, weaving, and conversion machinery, supported by: \
+            Digital monitoring and quality control tools to minimize defects and improve accuracy. \
+            Data-driven planning systems that help optimize raw material usage and reduce downtime. \
+            Continuous upgradation of production lines to meet global standards of FIBC manufacturing. \
+            Through these advancements, [Your Company Name] continues to evolve — delivering reliable, cost-effective, and high-performance packaging solutions that meet the expectations of an increasingly demanding market.",
+      image: wppFabricImg,
+    },
+    {
+      title: "Integrity",
+      text: "We operate transparently and ethically with suppliers, customers, and employees.",
+      image: nonWovenImg,
     },
   ];
 
-  const [currentIndex, setCurrentIndex] = useState(0);
-  const [isPaused, setIsPaused] = useState(false);
+  const defaultIndex = Math.floor(timeline.length / 2);
+  // Auto-advance state: use a separate currentIndex so auto-advance and hover interact cleanly
+  const [currentIndex, setCurrentIndex] = useState<number>(defaultIndex);
+  const intervalRef = useRef<number | null>(null);
+  const pausedRef = useRef(false);
+  
+  // Track expanded state for mobile cards
+  const [expandedCards, setExpandedCards] = useState<Set<number>>(new Set());
+  const [isMobile, setIsMobile] = useState(false);
 
+  // Detect mobile viewport
   useEffect(() => {
-    if (isPaused) return;
-    const id = setInterval(() => {
-      setCurrentIndex((i) => (i + 1) % cards.length);
-    }, 4000);
-    return () => clearInterval(id);
-  }, [isPaused]);
+    const checkMobile = () => {
+      setIsMobile(window.innerWidth <= 760);
+    };
+    checkMobile();
+    window.addEventListener('resize', checkMobile);
+    return () => window.removeEventListener('resize', checkMobile);
+  }, []);
+
+  // Active index is driven by currentIndex (dots or auto-advance)
+  const derivedActiveIndex = currentIndex;
+
+  // Auto-advance the currentIndex unless paused (hover/focus sets pausedRef)
+  useEffect(() => {
+    // set up interval
+    intervalRef.current = window.setInterval(() => {
+      if (pausedRef.current) return;
+      setCurrentIndex((prev) => (prev + 1) % timeline.length);
+    }, 3500);
+
+    return () => {
+      if (intervalRef.current !== null) {
+        window.clearInterval(intervalRef.current);
+        intervalRef.current = null;
+      }
+    };
+  }, [timeline.length]);
 
   return (
     <div className="page">
@@ -41,50 +101,111 @@ const Home = () => {
       </div>
 
       <div className="content">
-        <div>
-          <h2>About Us</h2>
-          <p>
-            We are one of the leading manufacturers and exporters of FIBC (Flexible
-            Intermediate Bulk Containers) also known as Jumbo Bags, Bulk Bags, or
-            Big Bags. Our products are designed to meet the highest standards of
-            quality and safety, ensuring reliable storage and transportation
-            solutions for various industries.
-          </p>
-        </div>
+        <section className="gallery-section">
+          <h2>Our Journey</h2>
 
-        {/* Carousel: horizontally sliding 3 cards, one visible at a time */}
-        <div
-          className="carousel"
-          onMouseEnter={() => setIsPaused(true)}
-          onMouseLeave={() => setIsPaused(false)}
-          aria-roledescription="carousel"
-        >
-          <div
-            className="carousel-track"
-            style={{
-              transform: `translateX(-${(currentIndex * 100) / cards.length}%)`,
-              ['--slides' as any]: cards.length,
-            }}
-          >
-            {cards.map((c, idx) => (
-              <div className="carousel-card card" key={idx} role="group" aria-roledescription="slide" aria-label={`${idx + 1} of ${cards.length}`}>
-                <h2 className="card-title">{c.title}</h2>
-                <p>{c.text}</p>
-              </div>
-            ))}
+          <div className="gallery" role="list" aria-label="Company principles gallery">
+            {/* interactive gallery: front card is clear, others are blurred/backdrop */}
+            {timeline.map((item, idx) => {
+              const isActive = idx === derivedActiveIndex;
+              // compute signed circular position so cards wrap smoothly
+              const n = timeline.length;
+              // modular distance in [0, n-1]
+              const modDist = ((idx - derivedActiveIndex) % n + n) % n;
+              // convert to signed position: values > n/2 become negative (left side)
+              const pos = modDist <= Math.floor(n / 2) ? modDist : modDist - n;
+              const distance = Math.abs(pos);
+              const translate = pos * 64; // px offset per card (signed)
+              const scale = Math.max(0.86, 1 - distance * 0.04);
+              const blurPx = distance === 0 ? 0 : distance * 3;
+              const opacity = distance === 0 ? 1 : Math.max(0.28, 1 - distance * 0.14);
+              
+              const isExpanded = expandedCards.has(idx);
+              
+              const handleCardClick = () => {
+                if (isMobile) {
+                  setExpandedCards(prev => {
+                    const newSet = new Set(prev);
+                    if (newSet.has(idx)) {
+                      newSet.delete(idx);
+                    } else {
+                      newSet.add(idx);
+                    }
+                    return newSet;
+                  });
+                }
+              };
+
+              return (
+                <div
+                  key={idx}
+                  role="listitem"
+                  tabIndex={0}
+                  aria-expanded={isActive}
+                  className={`gallery-item ${isActive ? "active" : "inactive"}`}
+                  // remove mouse enter/leave swap behavior; clicking dots below will control selection
+                  style={{
+                    transform: `translate(-50%, -50%) translateX(${translate}px) scale(${scale})`,
+                    zIndex: 100 - distance,
+                    filter: blurPx ? `blur(${blurPx}px)` : "none",
+                    opacity: opacity,
+                    // stagger transitions slightly based on distance for smoother movement
+                    transitionDelay: `${Math.min(distance, 4) * 60}ms`,
+                    willChange: "transform, filter, opacity",
+                  }}
+                >
+                  <div 
+                    className={`card gallery-card ${isActive ? 'is-active' : ''} ${isExpanded ? 'expanded' : ''}`}
+                    onClick={handleCardClick}
+                    role={isMobile ? "button" : undefined}
+                    aria-expanded={isMobile ? isExpanded : undefined}
+                  >
+                    <img 
+                      src={item.image} 
+                      alt="" 
+                      className="gallery-thumb" 
+                      aria-hidden="true"
+                      style={{
+                        position: 'absolute',
+                        right: '20px',
+                        top: '50%',
+                        transform: 'translateY(-50%)',
+                        width: '320px',
+                        height: '240px',
+                        zIndex: 10
+                      }}
+                    />
+                    <div className="card-body">
+                      <h3 className="card-title">{item.title}</h3>
+                      <p className={`card-text ${isActive ? "show" : "hide"}`}>{item.text}</p>
+                    </div>
+                  </div>
+                </div>
+              );
+            })}
           </div>
 
-          <div className="carousel-dots" aria-hidden={false}>
-            {cards.map((_, idx) => (
+          {/* dots for manual selection */}
+          <div className="gallery-dots" role="tablist" aria-label="Gallery navigation">
+            {timeline.map((_, i) => (
               <button
-                key={idx}
-                className={`dot ${idx === currentIndex ? "active" : ""}`}
-                onClick={() => setCurrentIndex(idx)}
-                aria-label={`Go to slide ${idx + 1}`}
+                key={i}
+                className={`dot ${i === currentIndex ? 'active' : ''}`}
+                aria-label={`Show card ${i + 1}`}
+                aria-pressed={i === currentIndex}
+                onClick={() => {
+                  // selecting a dot should set the current index and pause briefly
+                  setCurrentIndex(i);
+                  // pause auto-advance briefly so user can read
+                  pausedRef.current = true;
+                  window.setTimeout(() => {
+                    pausedRef.current = false;
+                  }, 3000);
+                }}
               />
             ))}
           </div>
-        </div>
+        </section>
       </div>
     </div>
   );

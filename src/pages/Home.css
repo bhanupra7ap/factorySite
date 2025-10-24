@@ -23,7 +23,7 @@
 }
 
 .content {
-  max-width: 980px;
+  max-width: 1200px;
   margin: 2rem auto;
   padding: 0 1rem;
 }
@@ -33,16 +33,17 @@
 }
 
 .card {
-  background: #fff;
+  /* Make the white card container visually invisible while keeping spacing */
+  background: transparent; /* no visible background so images can show through */
   border-radius: 8px;
-  padding: 1.25rem;
-  box-shadow: 0 6px 18px rgba(0,0,0,0.08);
-  transition: transform 160ms ease, box-shadow 160ms ease;
+  padding: 1.5rem;
+  box-shadow: none;
+  transition: transform 160ms ease;
 }
 
 .card:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 10px 28px rgba(0,0,0,0.12);
+  transform: translateY(-2px);
+  /* keep hover subtle when there's no shadow */
 }
 
 .card-title {
@@ -73,7 +74,7 @@
 .carousel {
   --slides: 3; /* fallback, will be overridden inline */
   margin-top: 2rem;
-  max-width: 980px;
+  max-width: 1100px;
   margin-left: auto;
   margin-right: auto;
   position: relative;
@@ -90,8 +91,8 @@
 .carousel-card {
   flex: 0 0 calc(100% / var(--slides));
   box-sizing: border-box;
-  padding: 1.25rem;
-  min-height: 140px;
+  padding: 1.5rem;
+  min-height: 160px;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -136,9 +137,437 @@
   background: rgba(0,0,0,0.62);
 }
 
+/* gallery-specific dots and smoother transitions */
+.gallery-dots {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 1rem;
+}
+.gallery-dots .dot {
+  width: 12px;
+  height: 12px;
+  background: rgba(0,0,0,0.16);
+  transition: transform 220ms ease, background-color 220ms ease, box-shadow 220ms ease;
+  border-radius: 999px;
+}
+.gallery-dots .dot.active {
+  background: rgba(11,59,90,0.92);
+  transform: scale(1.18);
+  box-shadow: 0 4px 12px rgba(11,59,90,0.16);
+}
+
 @media (min-width: 900px) {
   .carousel-card {
     padding: 2rem;
-    min-height: 180px;
+    min-height: 200px;
+  }
+}
+
+/* Timeline / Tree styles */
+.timeline-section h2 {
+  margin-bottom: 1rem;
+  color: #0b3b5a;
+}
+.timeline {
+  position: relative;
+  padding: 1rem 0;
+}
+.timeline::before {
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: 0;
+  bottom: 0;
+  width: 4px;
+  background: #e6edf3;
+  transform: translateX(-50%);
+}
+.timeline-item {
+  position: relative;
+  margin: 1.25rem 0;
+  display: flex;
+  width: 100%;
+}
+.timeline-marker {
+  position: absolute;
+  left: 50%;
+  width: 14px;
+  height: 14px;
+  background: #0b3b5a;
+  border-radius: 50%;
+  transform: translateX(-50%);
+  top: 1.25rem;
+  box-shadow: 0 4px 10px rgba(11,59,90,0.18);
+}
+.timeline-content {
+  width: calc(50% - 40px);
+  position: relative;
+}
+
+/* Inner white card with text */
+.timeline-content .card {
+  background: #fff;
+  border-radius: 8px;
+  padding: 1.5rem;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+  position: relative;
+  overflow: visible; /* Allow image to overflow */
+  transition: transform 160ms ease, box-shadow 160ms ease;
+}
+
+.timeline-content .card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(0,0,0,0.12);
+}
+.timeline-item.left .timeline-content {
+  margin-right: auto;
+  margin-left: 0;
+}
+.timeline-item.right .timeline-content {
+  margin-left: auto;
+}
+
+/* Keep content aligned left within the card */
+.timeline-item.left .timeline-content .card,
+.timeline-item.right .timeline-content .card {
+  text-align: left;
+}
+
+/* thumbnail / image inside timeline cards - positioned half on card, half outside */
+.timeline-content .card img {
+  width: 160px;
+  height: 120px;
+  object-fit: cover;
+  border-radius: 6px;
+  display: block;
+  position: absolute;
+  right: -80px; /* Half of image width (160px / 2) to position half outside */
+  top: 50%;
+  transform: translateY(-50%);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+  z-index: 10;
+}
+
+/* Text container inside the card (keeps titles aligned nicely) */
+.timeline-content .card-body {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+  padding-right: 100px; /* Add padding to prevent text from going under the image */
+  width: 100%;
+}
+
+/* Ensure card title stays on the left */
+.timeline-content .card-title {
+  text-align: left;
+}
+
+/* Small polish for card titles when background is transparent */
+.card-title {
+  margin: 0 0 0.5rem 0;
+  font-size: 1.25rem;
+  color: #0b3b5a;
+}
+.timeline-meta {
+  font-size: 0.9rem;
+  color: #7b9bb0;
+  margin-bottom: 0.35rem;
+}
+
+@media (max-width: 799px) {
+  .timeline::before {
+    left: 8px;
+    transform: none;
+    width: 3px;
+  }
+  .timeline-marker {
+    left: 8px;
+    transform: none;
+    top: 0.8rem;
+    width: 10px;
+    height: 10px;
+  }
+  .timeline-content {
+    width: 100%;
+    margin-left: 32px !important;
+    text-align: left !important;
+  }
+  .timeline-item.left .timeline-content,
+  .timeline-item.right .timeline-content {
+    text-align: left;
+  }
+
+  .timeline-content .card {
+    padding: 1rem;
+    overflow: visible;
+  }
+
+  .timeline-content .card img {
+    width: 100px;
+    height: 75px;
+    object-fit: cover;
+    border-radius: 4px;
+    position: absolute;
+    right: -50px;
+    top: 50%;
+    transform: translateY(-50%);
+    box-shadow: 0 3px 8px rgba(0,0,0,0.15);
+    z-index: 10;
+  }
+  
+  .timeline-content .card-body {
+    padding-right: 60px;
+  }
+
+  .timeline-content .card-title {
+    font-size: 1rem;
+  }
+
+  .timeline-meta {
+    font-size: 0.8rem;
+  }
+}
+
+/* Gallery layout: stacked cards centered. Active card is clear; others are blurred and slightly scaled back */
+.gallery-section h2 {
+  margin-bottom: 1rem;
+  color: #0b3b5a;
+}
+.gallery {
+  position: relative;
+  height: 420px;
+  margin-top: 1.5rem;
+  perspective: 1200px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.gallery-item {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: min(1100px, 95%);
+  transition: transform 520ms cubic-bezier(.2,.9,.2,1),
+              filter 520ms ease,
+              opacity 480ms ease;
+  outline: none;
+  will-change: transform, filter, opacity;
+  overflow: visible; /* Allow card content to overflow */
+}
+.gallery-item:focus {
+  box-shadow: 0 8px 30px rgba(11,59,90,0.18);
+  border-radius: 8px;
+}
+.gallery-card {
+  background: rgba(255,255,255,0.95);
+  border-radius: 10px;
+  padding: 2rem 2.5rem;
+  box-shadow: 0 10px 40px rgba(2,30,52,0.12);
+  display: block;
+  min-height: 338px;
+  position: relative;
+  overflow: visible; /* Allow image to overflow */
+  transition: transform 420ms cubic-bezier(.2,.9,.2,1),
+              box-shadow 420ms ease, background-color 320ms ease;
+  will-change: transform, opacity;
+}
+
+.gallery-card .card-body {
+  text-align: left;
+  position: relative;
+  padding-right: 240px; /* Space for gap between text and image */
+}
+
+.gallery-card .card-title {
+  text-align: left;
+  margin: 0 0 0.5rem 0;
+}
+
+/* Position image inside card on the right */
+.gallery-card .gallery-thumb {
+  width: 320px !important;
+  height: 240px !important;
+  object-fit: cover;
+  border-radius: 8px;
+  display: block;
+  position: absolute !important;
+  right: -40px !important; /* Overlap the card edge */
+  top: 60px !important; /* Position below the title line */
+  transform: none !important;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+  z-index: 10;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+.gallery-item.inactive .gallery-card {
+  background: rgba(255,255,255,0.78);
+}
+.gallery-card .card-body {
+  max-height: 300px; /* Increased to accommodate taller card */
+  overflow: hidden;
+}
+.card-text {
+  margin: 0;
+  color: #234556;
+  line-height: 1.45;
+  transition: max-height 260ms ease, opacity 260ms ease, transform 260ms ease;
+}
+.card-text.hide {
+  max-height: 0;
+  opacity: 0;
+  transform: translateY(-6px);
+}
+.card-text.show {
+  max-height: 400px;
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* When a user hovers the gallery item, expand it a bit more and reveal text fully */
+.gallery-item:hover,
+.gallery-item:focus {
+  transform: translate(-50%, -50%) scale(1.02) !important;
+}
+
+@media (max-width: 760px) {
+  .gallery {
+    height: 350px;
+    padding: 1rem 0 2rem 0;
+    gap: 0;
+    flex-direction: column;
+    perspective: 1200px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .gallery-item {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    width: 280px !important;
+    max-width: 85% !important;
+    transform: translate(-50%, -50%);
+    filter: blur(0px);
+    opacity: 1;
+    transition: transform 520ms cubic-bezier(.2,.9,.2,1),
+                filter 520ms ease,
+                opacity 480ms ease;
+    will-change: transform, filter, opacity;
+  }
+  
+  .gallery-item.inactive {
+    filter: blur(4px);
+    opacity: 0.4;
+    transform: translate(-50%, -50%) scale(0.92);
+  }
+  
+  .gallery-card {
+    display: block;
+    overflow: visible;
+    padding: 1.5rem 1rem;
+    min-height: 275px !important;
+    max-height: 275px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    background: rgba(255,255,255,0.98);
+  }
+  
+  /* Collapsed state - only show title */
+  .gallery-card:not(.expanded) {
+    min-height: 60px;
+    max-height: 60px;
+    display: flex;
+    align-items: center;
+  }
+  
+  .gallery-card:not(.expanded):hover {
+    background: rgba(255,255,255,1);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.12);
+  }
+  
+  .gallery-card:not(.expanded) .card-body {
+    padding-right: 0;
+  }
+  
+  .gallery-card:not(.expanded) .card-title {
+    font-size: 1.05rem;
+    margin-bottom: 0;
+  }
+  
+  .gallery-card:not(.expanded) .card-title::after {
+    content: ' ▼';
+    font-size: 0.8em;
+    color: #0b3b5a;
+    margin-left: 0.5rem;
+  }
+  
+  .gallery-card:not(.expanded) .gallery-thumb {
+    display: none;
+  }
+  
+  .gallery-card:not(.expanded) .card-text {
+    max-height: 0;
+    opacity: 0;
+    overflow: hidden;
+    margin: 0;
+    padding: 0;
+  }
+  
+  /* Expanded state - show everything */
+  .gallery-card.expanded {
+    min-height: 275px;
+    max-height: 275px;
+    overflow: visible;
+    padding: 1.5rem 1rem;
+  }
+  
+  .gallery-card.expanded .card-body {
+    padding-right: 0;
+    padding-bottom: 90px;
+  }
+  
+  .gallery-card.expanded .card-title {
+    font-size: 1rem;
+    margin-bottom: 0.5rem;
+  }
+  
+  .gallery-card.expanded .card-title::after {
+    content: ' ▲';
+    font-size: 0.8em;
+    color: #0b3b5a;
+    margin-left: 0.5rem;
+  }
+  
+  .gallery-card.expanded .gallery-thumb {
+    display: block;
+    width: 90% !important;
+    height: 80px !important;
+    object-fit: cover;
+    border-radius: 6px;
+    position: absolute !important;
+    left: 50% !important;
+    bottom: 8px !important;
+    transform: translateX(-50%) !important;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.15);
+    z-index: 10;
+    margin: 0 !important;
+    right: auto !important;
+    top: auto !important;
+  }
+  
+  .gallery-card.expanded .card-text {
+    max-height: 300px;
+    opacity: 1;
+    font-size: 0.85rem;
+    line-height: 1.4;
+    margin-top: 0.5rem;
+    transition: max-height 0.3s ease, opacity 0.3s ease;
+  }
+  
+  .card-text.hide {
+    max-height: 0;
+    opacity: 0;
   }
 }
