@@ -73,11 +73,13 @@ const Home = () => {
   // Active index is driven by currentIndex (dots or auto-advance)
   const derivedActiveIndex = currentIndex;
 
-  // Auto-advance the currentIndex unless paused (hover/focus sets pausedRef)
+  // Auto-advance the currentIndex unless paused (hover/focus sets pausedRef) or any card is expanded in mobile
   useEffect(() => {
     // set up interval
     intervalRef.current = window.setInterval(() => {
       if (pausedRef.current) return;
+      // Pause auto-advance if any card is expanded in mobile view
+      if (isMobile && expandedCards.size > 0) return;
       setCurrentIndex((prev) => (prev + 1) % timeline.length);
     }, 3500);
 
@@ -87,7 +89,7 @@ const Home = () => {
         intervalRef.current = null;
       }
     };
-  }, [timeline.length]);
+  }, [timeline.length, isMobile, expandedCards]);
 
   return (
     <div className="page">
