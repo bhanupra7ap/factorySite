@@ -40,9 +40,11 @@
 
 /* Floating/inset look when the user scrolls away from top */
 .navbar.floating {
-  position: sticky;
+  position: fixed;
   top: 12px;
-  margin: 0 1vw;
+  left: 1vw;
+  right: 1vw;
+  margin: 0;
   border-radius: 25px;
   padding: 0 3rem;
 }
