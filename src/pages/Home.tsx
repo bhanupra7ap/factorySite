@@ -102,7 +102,7 @@ const Home = () => {
 
       <div className="content">
         <section className="gallery-section">
-          <h2>Our Journey</h2>
+          <h2>Our Principles</h2>
 
           <div className="gallery" role="list" aria-label="Company principles gallery">
             {/* interactive gallery: front card is clear, others are blurred/backdrop */}

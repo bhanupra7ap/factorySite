@@ -174,7 +174,7 @@ const Navbar = () => {
               ×
             </button>
           )}
-          <Link to="/" className="navbar-item">
+          <Link to="/" className="navbar-item" onClick={() => isMobileOpen && setIsMobileOpen(false)}>
             Home
           </Link>
           
