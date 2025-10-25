@@ -4,7 +4,7 @@ import facilitiesImg from "../assets/facilities-header.avif";
 import qualityImg from "../assets/quality-header.avif";
 import nonWovenImg from "../assets/non-woven-header.avif";
 import wppFabricImg from "../assets/wpp-fabric-header.avif";
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useMemo, useRef, useState } from "react";
 import foodLogo from "../assets/industries/food.png";
 import agricultureLogo from "../assets/industries/agriculture.png";
 import chemicalLogo from "../assets/industries/chemical.png";
@@ -107,6 +107,9 @@ const Home = () => {
       >
         <h1 className="header-title">FIBC manufacturers and exporters</h1>
       </div>
+
+      {/* Full-bleed auto-scrolling bags slider (appears right before Our Principles) */}
+      <BagsSlider />
 
       <div className="content">
         <section className="gallery-section">
@@ -241,3 +244,97 @@ const Home = () => {
 };
 
 export default Home;
+
+// --- Bags Slider Component ---
+type BagItem = { url: string; caption: string };
+
+const BagsSlider = () => {
+  // Load all images from assets/bags and create captions from filenames
+  const items: BagItem[] = useMemo(() => {
+    // Vite glob import for static assets as URLs (updated to use query/import per deprecation notice)
+    const modules = import.meta.glob("../assets/bags/*", {
+      eager: true,
+      query: "?url",
+      import: "default",
+    }) as Record<string, string>;
+
+    const list = Object.entries(modules)
+      .sort(([a], [b]) => a.localeCompare(b))
+      .map(([path, url]) => {
+        const file = path.split("/").pop() || "";
+        const base = file.replace(/\.[^/.]+$/, "");
+        const caption = base.replace(/[-_]+/g, " ").toUpperCase();
+        return { url, caption };
+      });
+    return list;
+  }, []);
+
+  if (!items.length) return null;
+
+  // Determine how many repetitions are needed to ensure each lane is wider than the viewport
+  const containerRef = useRef<HTMLDivElement | null>(null);
+  const rowRef = useRef<HTMLDivElement | null>(null);
+  const [repeatCount, setRepeatCount] = useState<number>(3);
+
+  useEffect(() => {
+    const measure = () => {
+      const container = containerRef.current;
+      const row = rowRef.current;
+      if (!container || !row) return;
+      const containerWidth = container.clientWidth;
+      const rowWidth = row.scrollWidth; // width for a single set of items
+      if (containerWidth && rowWidth) {
+        // Aim for each lane to be at least 1.5x container width for safe coverage
+        const needed = Math.ceil((containerWidth * 1.5) / rowWidth);
+        const clamped = Math.max(2, Math.min(8, needed));
+        setRepeatCount(clamped);
+      }
+    };
+    measure();
+    const ro = new ResizeObserver(() => measure());
+    if (containerRef.current) ro.observe(containerRef.current);
+    return () => ro.disconnect();
+  }, [items.length]);
+
+  const laneItems = useMemo(() => {
+    const list: BagItem[] = [];
+    for (let i = 0; i < repeatCount; i++) list.push(...items);
+    return list;
+  }, [items, repeatCount]);
+
+  // Render helper for cards
+  const renderCards = (list: BagItem[], keyPrefix: string) => (
+    list.map((it, idx) => (
+      <figure className="bag-card" key={`${keyPrefix}-${idx}`}>
+        <div className="bag-media">
+          <img src={it.url} alt={it.caption} className="bag-img" />
+        </div>
+        <figcaption className="bag-caption">{it.caption}</figcaption>
+      </figure>
+    ))
+  );
+
+  // Two-lane marquee: two identical lanes slide left; the second starts offset,
+  // ensuring a continuous loop without any blank gaps at the seam.
+  return (
+    <section className="bags-slider full-bleed" aria-label="Product bags showcase">
+      <div className="bags-slider-inner" aria-hidden="true" ref={containerRef}>
+        {/* Measurement row (one copy) to compute widths; visually identical to lane rows */}
+        <div className="bags-row bags-row-measure" ref={rowRef} style={{ position: 'absolute', visibility: 'hidden', pointerEvents: 'none' }}>
+          {renderCards(items, "measure")}
+        </div>
+
+        <div className="bags-lane">
+          <div className="bags-row">
+            {renderCards(laneItems, "lane-a")}
+          </div>
+        </div>
+        <div className="bags-lane clone">
+          <div className="bags-row">
+            {renderCards(laneItems, "lane-b")}
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+};

@@ -28,6 +28,101 @@
   padding: 0 1rem;
 }
 
+/* Full-bleed helper to span entire viewport width */
+.full-bleed {
+  width: 100vw;
+  position: relative;
+  left: 50%;
+  right: 50%;
+  margin-left: -50vw;
+  margin-right: -50vw;
+}
+
+/* Bags slider - continuous auto-scrolling portrait cards */
+.bags-slider {
+  /* Give some breathing space similar to hero, but slimmer */
+  background: linear-gradient(180deg, #f9fbfd 0%, #f3f8fc 100%);
+  padding: 1.25rem 0 1.5rem 0;
+}
+.bags-slider-inner {
+  overflow: hidden;
+  position: relative;
+  /* Ensure the container has height even though lanes are absolutely positioned */
+  height: clamp(240px, 24vw, 390px);
+}
+
+/* Two-lane continuous marquee: each lane moves its own width to the left.
+   The second lane starts offset so there is always content on screen. */
+.bags-lane {
+  --start: 0%;
+  position: absolute;
+  inset: 0 auto 0 0; /* pin to left, full height */
+  transform: translateX(var(--start));
+  animation: bags-lane-scroll 38s linear infinite;
+  will-change: transform;
+}
+.bags-lane.clone {
+  --start: 100%;
+}
+
+.bags-row {
+  display: flex;
+  gap: 18px;
+  width: max-content;
+  padding: 0 18px;
+}
+
+@keyframes bags-lane-scroll {
+  0%   { transform: translateX(var(--start)); }
+  100% { transform: translateX(calc(-100% + var(--start))); }
+}
+
+.bag-card {
+  background: #ffffff;
+  border-radius: 14px;
+  box-shadow: 0 10px 28px rgba(2,30,52,0.08);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  justify-content: flex-start;
+  width: clamp(160px, 16vw, 260px); /* portrait width */
+  aspect-ratio: 2 / 3; /* portrait shape */
+}
+
+.bag-media {
+  position: relative;
+  flex: 1 1 auto;
+}
+
+.bag-img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.bag-caption {
+  flex: 0 0 auto;
+  padding: 10px 12px;
+  font-weight: 700;
+  font-size: 0.9rem;
+  letter-spacing: 0.5px;
+  text-align: center;
+  color: #0b3b5a;
+  border-top: 1px solid rgba(11,59,90,0.08);
+  background: rgba(255,255,255,0.96);
+}
+
+@media (max-width: 760px) {
+  .bags-lane { animation-duration: 28s; }
+  .bags-row { gap: 14px; padding: 0 14px; }
+  .bags-slider-inner { height: clamp(195px, 57vw, 300px); }
+  .bag-card { width: clamp(130px, 38vw, 200px); border-radius: 10px; }
+  .bag-caption { font-size: 0.8rem; padding: 8px 10px; }
+}
+
 .what-we-do-section {
   margin-top: 1.5rem;
 }
