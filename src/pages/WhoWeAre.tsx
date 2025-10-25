@@ -1,5 +1,5 @@
 import headerImg from "../assets/who-we-are-header.avif";
-import facilitiesImg from "../assets/home-header.avif";
+import facilitiesImg from "../assets/home-header.jpg";
 import imgSustainability from "../assets/non-woven-header.avif";
 import imgCustomers from "../assets/contact-header.avif";
 import imgInnovation from "../assets/facilities-header.jpg";

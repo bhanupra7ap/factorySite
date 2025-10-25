@@ -1,9 +1,10 @@
 import "./Home.css";
-import headerImg from "../assets/home-header.avif";
+import headerImg from "../assets/home-header.jpg";
 import facilitiesImg from "../assets/facilities-header.jpg";
 import qualityImg from "../assets/quality-header.avif";
 import wppFabricImg from "../assets/wpp-fabric-header.avif";
 import { useEffect, useMemo, useRef, useState } from "react";
+import { Link } from "react-router-dom";
 import foodLogo from "../assets/industries/food.png";
 import agricultureLogo from "../assets/industries/agriculture.png";
 import chemicalLogo from "../assets/industries/chemical.png";
@@ -86,7 +87,10 @@ const Home = () => {
           backgroundImage: `url(${headerImg})`,
         }}
       >
-        <h1 className="header-title">FIBC manufacturers and exporters</h1>
+        <div className="header-cta">
+          <h1 className="header-title">FIBC Packaging Materials</h1>
+          <Link to="/contact" className="hero-cta-btn">GET A QUOTE</Link>
+        </div>
       </div>
 
       {/* Full-bleed auto-scrolling bags slider (appears right before Our Principles) */}
