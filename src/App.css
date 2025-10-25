@@ -8,6 +8,8 @@
 .main-content {
   flex: 1;
   min-height: calc(100vh - 130px);
+  /* Global gap before footer */
+  padding-bottom: 2rem;
   background: #ffffff;
 }
 
