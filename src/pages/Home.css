@@ -43,6 +43,8 @@
   /* Give some breathing space similar to hero, but slimmer */
   background: linear-gradient(180deg, #f9fbfd 0%, #f3f8fc 100%);
   padding: 1.25rem 0 1.5rem 0;
+  /* Create a little gap below the slider section */
+  margin-bottom: 1rem;
 }
 .bags-slider-inner {
   overflow: hidden;
@@ -121,6 +123,8 @@
   .bags-slider-inner { height: clamp(195px, 57vw, 300px); }
   .bag-card { width: clamp(130px, 38vw, 200px); border-radius: 10px; }
   .bag-caption { font-size: 0.8rem; padding: 8px 10px; }
+  /* Slightly smaller gap on mobile */
+  .bags-slider { margin-bottom: 0.75rem; }
 }
 
 .what-we-do-section {
