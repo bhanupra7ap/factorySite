@@ -5,6 +5,12 @@ import qualityImg from "../assets/quality-header.avif";
 import nonWovenImg from "../assets/non-woven-header.avif";
 import wppFabricImg from "../assets/wpp-fabric-header.avif";
 import { useEffect, useRef, useState } from "react";
+import foodLogo from "../assets/industries/food.png";
+import agricultureLogo from "../assets/industries/agriculture.png";
+import chemicalLogo from "../assets/industries/chemical.png";
+import miningLogo from "../assets/industries/mining.png";
+import constructionLogo from "../assets/industries/construction.png";
+import petrochemicalLogo from "../assets/industries/petrochemical.png";
 
 type TimelineItem = {
   title: string;
@@ -205,6 +211,27 @@ const Home = () => {
                   }, 3000);
                 }}
               />
+            ))}
+          </div>
+        </section>
+
+        {/* Industries We Serve section */}
+        <section className="industries-section" aria-labelledby="industries-heading">
+          <h2 id="industries-heading">Industries We Serve</h2>
+          <div className="industries-grid" role="list">
+            {[
+              { name: "Food", icon: foodLogo },
+              { name: "Agriculture", icon: agricultureLogo },
+              { name: "Chemical", icon: chemicalLogo },
+              { name: "Mining", icon: miningLogo },
+              { name: "Construction", icon: constructionLogo },
+              // Duplicate 'Food' if intentionally requested; otherwise, keep unique entries
+              { name: "Petrochemical", icon: petrochemicalLogo },
+            ].map((item, idx) => (
+              <div className="industry-card" key={`${item.name}-${idx}`} role="listitem">
+                <img src={item.icon} alt={`${item.name} industry logo`} className="industry-icon" />
+                <span className="industry-label">{item.name}</span>
+              </div>
             ))}
           </div>
         </section>

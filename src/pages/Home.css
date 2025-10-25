@@ -157,6 +157,100 @@
   box-shadow: 0 4px 12px rgba(11,59,90,0.16);
 }
 
+/* Industries section */
+.industries-section {
+  margin-top: 3.5rem;
+}
+.industries-section h2 {
+  margin-bottom: 1rem;
+  color: #0b3b5a; /* match Our Principles heading */
+}
+.industries-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(220px, 1fr)); /* 2 columns by default */
+  gap: 20px;
+}
+.industry-card {
+  background: #fff;
+  border-radius: 12px;
+  padding: 1.5rem 1.25rem;
+  box-shadow: 0 10px 28px rgba(2,30,52,0.1);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 180px; /* larger card */
+  transition: transform 180ms ease, box-shadow 180ms ease;
+}
+.industry-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 14px 36px rgba(2,30,52,0.14);
+}
+.industry-icon {
+  width: 72px; /* larger icon */
+  height: 72px;
+  display: block;
+  margin-bottom: 0.65rem;
+  filter: none; /* keep original brand color */
+}
+.industry-label {
+  font-size: 1.05rem;
+  color: #234556;
+}
+
+@media (min-width: 900px) {
+  .industries-grid {
+    grid-template-columns: repeat(3, minmax(220px, 1fr)); /* 3 columns -> 2 rows with 6 items */
+    gap: 24px;
+  }
+  .industry-card {
+    min-height: 200px;
+    padding: 1.75rem 1.25rem;
+  }
+  .industry-icon {
+    width: 84px;
+    height: 84px;
+  }
+}
+
+/* Mobile optimizations to ensure cards fit on small screens */
+@media (max-width: 480px) {
+  .industries-grid {
+    grid-template-columns: repeat(2, 1fr); /* keep 2 columns; remove wide min to prevent overflow */
+    gap: 12px;
+  }
+  .industry-card {
+    min-height: 140px;
+    padding: 0.9rem 0.75rem;
+    border-radius: 10px;
+  }
+  .industry-icon {
+    width: 56px;
+    height: 56px;
+    margin-bottom: 0.4rem;
+  }
+  .industry-label {
+    font-size: 0.95rem;
+  }
+}
+
+@media (max-width: 360px) {
+  .industries-grid {
+    gap: 10px;
+  }
+  .industry-card {
+    min-height: 120px;
+    padding: 0.75rem 0.6rem;
+  }
+  .industry-icon {
+    width: 48px;
+    height: 48px;
+  }
+  .industry-label {
+    font-size: 0.9rem;
+  }
+}
+
 @media (min-width: 900px) {
   .carousel-card {
     padding: 2rem;
