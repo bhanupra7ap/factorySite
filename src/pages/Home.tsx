@@ -23,36 +23,18 @@ const Home = () => {
   const timeline: TimelineItem[] = [
     {
       title: "Integrated Manufacturing from Tape to FIBC Bags",
-      text: "At Varuna Packtech, we believe that control over the process leads to control over quality. \
-            Our operations are vertically connected — starting with tape extrusion, followed by weaving high-strength polypropylene fabric, and finally converting it into durable and customizable FIBC bags. \
-            This in-house integration allows us to maintain consistent quality, flexible production planning, and better cost efficiency for our customers. \
-            Our current capacity supports a wide range of industrial and export-grade FIBC solutions, designed to meet the specific requirements of clients in sectors like agriculture, chemicals, construction, and food processing.",
+      text: "Varuna Packtech is a vertically integrated manufacturer of high-strength FIBC bags — from tape extrusion to fabric weaving and bag conversion — ensuring consistent quality, flexible production, and cost-efficient solutions for diverse industrial needs.",
       image: facilitiesImg,
     },
     {
       title: "Committed to Responsible Manufacturing",
-      text: "Sustainability is not an afterthought for us — it's a part of how we operate every day. \
-            We focus on reducing waste, optimizing resource usage, and promoting renewable energy within our operations. \
-            We have implemented waste segregation and recycling systems to ensure that all process waste is reused effectively. \
-            A portion of our energy needs is already met through solar installations, and we continue to expand our renewable energy footprint each year. \
-            Our water management practices emphasize reuse and responsible discharge through treatment and rainwater harvesting systems. \
-            By taking steady, practical steps, we aim to build a manufacturing environment that balances growth with environmental care.",
+      text: "At Varuna Packtech, sustainability drives every process, with focused efforts on recycling, renewable energy, and water management to achieve responsible and efficient manufacturing.",
       image: qualityImg,
     },
     {
       title: "Adopting Technology for Smarter Production",
-      text: "Technology plays a key role in improving our efficiency, consistency, and responsiveness to customer needs. \
-            Our manufacturing setup uses modern extrusion, weaving, and conversion machinery, supported by: \
-            Digital monitoring and quality control tools to minimize defects and improve accuracy. \
-            Data-driven planning systems that help optimize raw material usage and reduce downtime. \
-            Continuous upgradation of production lines to meet global standards of FIBC manufacturing. \
-            Through these advancements, [Your Company Name] continues to evolve — delivering reliable, cost-effective, and high-performance packaging solutions that meet the expectations of an increasingly demanding market.",
+      text: "Technology powers Varuna Packtech’s efficiency and precision — with digitally monitored, data-driven production lines that ensure consistent quality and globally competitive FIBC solutions.",
       image: wppFabricImg,
-    },
-    {
-      title: "Integrity",
-      text: "We operate transparently and ethically with suppliers, customers, and employees.",
-      image: nonWovenImg,
     },
   ];
 
