@@ -1,4 +1,4 @@
-import headerImg from "../assets/facilities-header.avif";
+import headerImg from "../assets/facilities-header.jpg";
 
 const Facilities = () => {
   return (

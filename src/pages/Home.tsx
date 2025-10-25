@@ -1,8 +1,7 @@
 import "./Home.css";
 import headerImg from "../assets/home-header.avif";
-import facilitiesImg from "../assets/facilities-header.avif";
+import facilitiesImg from "../assets/facilities-header.jpg";
 import qualityImg from "../assets/quality-header.avif";
-import nonWovenImg from "../assets/non-woven-header.avif";
 import wppFabricImg from "../assets/wpp-fabric-header.avif";
 import { useEffect, useMemo, useRef, useState } from "react";
 import foodLogo from "../assets/industries/food.png";

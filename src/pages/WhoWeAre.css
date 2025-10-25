@@ -1,0 +1,208 @@
+/* Styles specific to WhoWeAre page card side image layout */
+
+/* Wrapper around the paragraph card to allow the image to overlap */
+.content .content-card.with-side-image {
+  position: relative;
+}
+
+/* Increase right padding on the card to make room for the portion of the image inside the card */
+.content .content-card.with-side-image > p {
+  position: relative;
+  padding-right: 200px; /* room for ~half of a 300px image + spacing */
+}
+
+/* Absolutely position the image so half sits outside on the right */
+.content .content-card.with-side-image .card-side-image {
+  position: absolute;
+  top: 50%;
+  right: -150px; /* half of image width - pushes half outside */
+  transform: translateY(-50%);
+  width: 300px;
+  height: auto;
+  border-radius: 12px;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.2);
+  object-fit: cover;
+}
+
+/* Tweak sizing for medium screens */
+@media (max-width: 1024px) {
+  .content .content-card.with-side-image > p {
+    padding-right: 160px;
+  }
+  .content .content-card.with-side-image .card-side-image {
+    width: 240px;
+    right: -120px;
+  }
+}
+
+/* On tablets, keep the effect but smaller */
+@media (max-width: 768px) {
+  .content .content-card.with-side-image > p {
+    padding-right: 120px;
+  }
+  .content .content-card.with-side-image .card-side-image {
+    width: 180px;
+    right: -90px;
+    border-radius: 10px;
+  }
+}
+
+/* On narrow phones, hide the side image to avoid layout overflow */
+@media (max-width: 480px) {
+  .content .content-card.with-side-image > p {
+    padding-right: 1.5rem; /* fall back to default spacing */
+  }
+  .content .content-card.with-side-image .card-side-image {
+    display: none;
+  }
+}
+
+/* Themes (Philosophy, Sustainability, etc.) card grid */
+.themes-section {
+  margin-top: 2.5rem;
+}
+
+.themes-section h2 {
+  margin-bottom: 1rem;
+}
+
+.themes-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr)); /* 2 per row on small screens */
+  gap: 1rem;
+}
+
+@media (min-width: 900px) {
+  .themes-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr)); /* keep 2 per row on larger screens */
+  }
+}
+
+.theme-card {
+  background: #ffffff;
+  border: 1px solid rgba(0, 0, 0, 0.06);
+  border-radius: 12px;
+  padding: 1.1rem 1.1rem 1.25rem;
+  text-align: left; /* better readability for longer paragraphs */
+  transition: transform 180ms ease, box-shadow 180ms ease, background-color 180ms ease;
+}
+
+.theme-card:hover {
+  transform: translateY(-3px);
+  background-color: #fafafa;
+  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.08);
+}
+
+.icon-wrap {
+  width: 48px;
+  height: 48px;
+  margin: 0 0 0.5rem 0; /* align with left text */
+  color: #1e88e5; /* accent color for line icons */
+}
+
+.theme-title {
+  font-size: 1rem;
+  font-weight: 600;
+  margin: 0.25rem 0 0.35rem;
+}
+
+.theme-desc {
+  margin: 0.25rem 0 0;
+  font-size: 0.96rem;
+  line-height: 1.55;
+  color: rgba(0, 0, 0, 0.8);
+}
+
+/* Alternating media rows for themes */
+.themes-alt {
+  margin-top: 2.5rem;
+}
+
+.themes-alt h2 {
+  margin-bottom: 1rem;
+}
+
+.themes-alt-card {
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  border-radius: 14px;
+  background: #fff;
+  overflow: hidden; /* ensure edges are flush */
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.04);
+}
+
+.theme-row {
+  display: flex;
+  align-items: stretch; /* make both sides equal height */
+  gap: 1.5rem;
+  padding: 1.25rem;
+  margin: 0; /* rows sit flush inside the single card */
+}
+
+.theme-row.reverse {
+  flex-direction: row-reverse;
+}
+
+.theme-text, .theme-media {
+  flex: 1 1 0;
+}
+
+.theme-text h3 {
+  margin: 0 0 0.5rem 0;
+  font-size: 1.1rem;
+  text-align: center; /* center the title within the text card */
+}
+
+.theme-text p {
+  margin: 0;
+  line-height: 1.6;
+  color: rgba(0, 0, 0, 0.8);
+}
+
+/* small centered logo above titles inside text card */
+.theme-logo {
+  display: grid;
+  place-items: center;
+  margin-bottom: 0.35rem;
+  color: #1e88e5;
+}
+
+.theme-logo svg {
+  width: 36px;
+  height: 36px;
+}
+
+/* subtle separators between rows */
+.theme-row + .theme-row {
+  border-top: 1px solid rgba(0, 0, 0, 0.06);
+}
+
+.theme-media img {
+  width: 100%;
+  height: 100%; /* match text column height */
+  object-fit: cover;
+  border-radius: 12px;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
+}
+
+.media-box {
+  display: grid;
+  place-items: center;
+  width: 100%;
+  height: 100%; /* match text column height */
+  border-radius: 12px;
+  background: linear-gradient(135deg, #e3f2fd 0%, #f1f8ff 100%);
+  color: #1e88e5;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
+}
+
+/* Stack alternating rows on narrow screens */
+@media (max-width: 768px) {
+  .theme-row,
+  .theme-row.reverse {
+    flex-direction: column;
+  }
+  .theme-media img,
+  .media-box {
+    height: 200px;
+  }
+}
