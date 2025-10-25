@@ -1,0 +1,383 @@
+/* Provide shared timeline variables at section scope */
+.quality-policies {
+  --line: rgba(0, 0, 0, 0.12);
+  --node-bg: #ffffff;
+  --node-ring: #eef2ff;
+  --shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
+}
+
+/* Root badge above timeline */
+.timeline-root {
+  position: relative;
+  max-width: 1100px;
+  margin: 0 auto 1.25rem;
+  display: grid;
+  place-items: center;
+}
+
+.timeline-root::after {
+  /* short connector to the trunk */
+  content: "";
+  position: absolute;
+  bottom: -0.75rem;
+  left: 50%;
+  width: 2px;
+  height: 24px;
+  background: var(--line);
+  transform: translateX(-1px);
+}
+
+.root-card {
+  background: linear-gradient(180deg, #ffffff, #f9fafb);
+  border: 1px solid var(--node-ring);
+  border-radius: 999px;
+  padding: 0.5rem 1rem;
+  box-shadow: var(--shadow);
+  font-weight: 600;
+}
+/* Styles specific to the Quality page */
+
+/* Use WhoWeAre's .header-image base styles and only override the background */
+.header-image.quality-header {
+  background-image: url('../assets/quality-header.avif');
+  background-size: cover;
+  background-position: center;
+}
+
+/* Spacing helpers */
+.section-pad {
+  padding: 2rem 0;
+}
+
+.text-center {
+  text-align: center;
+}
+
+/* Headings with inline icons */
+.icon-title {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  justify-content: center;
+}
+
+/* Centered paragraph with typical lead width */
+.lead {
+  max-width: 900px;
+  margin: 0 auto 1rem;
+  text-align: center;
+}
+
+/* Slightly tighter top margin variant */
+.lead-tight {
+  max-width: 900px;
+  margin: 0.5rem auto 0;
+}
+
+/* Policies grid + cards */
+.policy-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 1rem;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.policy-card {
+  background: #ffffff;
+  border-radius: 16px;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
+  padding: 1.25rem;
+  border: 1px solid #f2f2f2;
+}
+
+.policy-card h3 {
+  margin: 0;
+}
+
+.policy-card p {
+  margin-top: 0.5rem;
+}
+
+/* Timeline layout for policies (alternating sides) */
+.policy-timeline {
+  list-style: none;
+  margin: 0 auto;
+  padding: 0;
+  max-width: 1100px;
+  display: grid;
+  grid-template-columns: minmax(240px, 1fr) 2px minmax(240px, 1fr);
+  --timeline-gap: 1.25rem;
+  column-gap: var(--timeline-gap);
+  row-gap: 2rem; /* more breathing room so points sit clearly below one another */
+  position: relative;
+  /* allow later children (dot/card) to backfill earlier columns in the same row
+     even if spacer (placed first) occupies the last column; this keeps all three
+     pieces of an item on a single row and aligns dots with their cards */
+  grid-auto-flow: row dense;
+}
+
+.policy-timeline::before {
+  /* central vertical line */
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  width: 2px;
+  background: var(--line);
+  transform: translateX(-1px);
+}
+
+.timeline-item {
+  display: contents; /* let children occupy grid cells */
+}
+
+/* spacer takes the opposite side column to lock each item to its own row */
+.timeline-item.left .spacer { grid-column: 3; }
+.timeline-item.right .spacer { grid-column: 1; }
+.timeline-item .spacer { min-height: 1px; }
+
+.timeline-card {
+  background: var(--node-bg);
+  border-radius: 14px;
+  padding: 0.9rem 1rem;
+  border: 1px solid var(--node-ring);
+  box-shadow: var(--shadow);
+  position: relative;
+  transition: transform 160ms ease, box-shadow 160ms ease;
+}
+
+.timeline-card h3 {
+  margin: 0 0 0.25rem 0;
+}
+
+.timeline-card p {
+  margin: 0;
+  color: rgba(0, 0, 0, 0.7);
+}
+
+.timeline-card:hover,
+.timeline-card:focus-visible {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.12);
+  outline: none;
+}
+
+/* plain circle dot on the trunk */
+/* center dot on the trunk column */
+.dot {
+  grid-column: 2;
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background: #fff;
+  border: 3px solid #9ca3af; /* neutral grey */
+  justify-self: center;
+  align-self: center;
+  box-shadow: 0 0 0 3px #e5e7eb; /* soft grey ring */
+  z-index: 2; /* sit above connector line */
+}
+
+/* subtle side accent on cards near the trunk for a cleaner look */
+.timeline-item.left .timeline-card {
+  grid-column: 1;
+  justify-self: end;
+  border-right: 3px solid #9ca3af; /* grey accent */
+  padding-right: 0.9rem; /* compensate for accent */
+}
+
+.timeline-item.right .timeline-card {
+  grid-column: 3;
+  justify-self: start;
+  border-left: 3px solid #9ca3af; /* grey accent */
+  padding-left: 0.9rem;
+}
+
+/* small connector arm from the center line to each card */
+.timeline-item.left .timeline-card::before,
+.timeline-item.right .timeline-card::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  transform: translateY(-1px);
+  width: calc(var(--timeline-gap) + 1px); /* reach trunk center */
+  height: 2px;
+  background: var(--line);
+}
+
+.timeline-item.left .timeline-card::before { right: calc(-1 * (var(--timeline-gap) + 1px)); }
+.timeline-item.right .timeline-card::before { left: calc(-1 * (var(--timeline-gap) + 1px)); }
+
+/* removed pseudo-dot; using actual .dot aligned by grid */
+
+/* Responsive: collapse to a single column timeline */
+@media (max-width: 700px) {
+  .policy-timeline {
+    grid-template-columns: 2px 1fr;
+    --timeline-gap: 1rem;
+    column-gap: var(--timeline-gap);
+    /* On small screens, avoid dense placement that can misalign dots/cards */
+    grid-auto-flow: row;
+  }
+  .policy-timeline::before {
+    left: 0; /* align the 2px trunk flush to the grid edge */
+    transform: none;
+  }
+  /* spacers are not needed on stacked layout */
+  .timeline-item .spacer { display: none; }
+  .dot {
+    grid-column: 1;
+  }
+  .timeline-item.left .timeline-card,
+  .timeline-item.right .timeline-card {
+    grid-column: 2;
+    justify-self: start;
+    border-left: 3px solid #9ca3af;
+    border-right: none;
+    padding-left: 0.9rem;
+    padding-right: 1rem;
+  }
+  .timeline-item.left .timeline-card::before,
+  .timeline-item.right .timeline-card::before {
+    left: calc(-1 * var(--timeline-gap));
+    right: auto;
+    width: var(--timeline-gap);
+    top: 50%; /* anchor connector to the vertical middle of the card */
+    transform: translateY(-1px);
+  }
+}
+
+/* Sections */
+.testing-facility {
+  background: #f9fafb;
+  border-radius: 16px;
+  padding: 2rem 1.5rem;
+  text-align: center;
+}
+
+.team {
+  text-align: center;
+}
+
+.future-goals {
+  background: #f3f4f6;
+  border-radius: 16px;
+  padding: 2rem 1.5rem;
+  text-align: center;
+}
+
+.footer-cta {
+  text-align: center;
+  background: #eff6ff;
+  border-radius: 16px;
+  padding: 2.5rem 1.5rem;
+}
+
+.footer-cta h2 {
+  margin-bottom: 0.5rem;
+}
+
+.footer-cta p {
+  color: #374151;
+  margin-bottom: 1rem;
+}
+
+/* Buttons */
+.primary-btn {
+  background: #2563eb;
+  color: #ffffff;
+  padding: 0.75rem 1.25rem;
+  border-radius: 12px;
+  border: 0;
+  cursor: pointer;
+  box-shadow: 0 6px 18px rgba(37, 99, 235, 0.35);
+}
+
+.primary-btn:hover {
+  background: #1d4ed8;
+}
+
+/* ==============================
+   Alternating media rows (copied from WhoWeAre.css, scoped for Quality)
+   ============================== */
+.themes-alt {
+  margin-top: 2.5rem;
+}
+
+.themes-alt h2 {
+  margin-bottom: 1rem;
+}
+
+.themes-alt-card {
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  border-radius: 14px;
+  background: #fff;
+  overflow: hidden; /* ensure edges are flush */
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.04);
+}
+
+.theme-row {
+  display: flex;
+  align-items: stretch; /* make both sides equal height */
+  gap: 1.5rem;
+  padding: 1.25rem;
+  margin: 0; /* rows sit flush inside the single card */
+}
+
+.theme-row.reverse {
+  flex-direction: row-reverse;
+}
+
+.theme-text,
+.theme-media {
+  flex: 1 1 0;
+}
+
+.theme-text h3 {
+  margin: 0 0 0.5rem 0;
+  font-size: 1.1rem;
+  text-align: center; /* center the title within the text card */
+}
+
+.theme-text p {
+  margin: 0;
+  line-height: 1.6;
+  color: rgba(0, 0, 0, 0.8);
+}
+
+/* subtle separators between rows */
+.theme-row + .theme-row {
+  border-top: 1px solid rgba(0, 0, 0, 0.06);
+}
+
+.theme-media img {
+  width: 100%;
+  height: 100%; /* match text column height */
+  object-fit: cover;
+  border-radius: 12px;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
+}
+
+/* Ensure the image always fills its column and matches the text card height */
+.theme-media {
+  display: flex; /* allow child img to stretch */
+}
+.theme-media > img {
+  flex: 1 1 auto;
+  height: 100%;
+  width: 100%;
+  object-fit: cover; /* crop to fill without distortion */
+  min-height: 220px; /* keep a pleasant size when text is short on desktop */
+}
+
+/* Stack alternating rows on narrow screens */
+@media (max-width: 768px) {
+  .theme-row,
+  .theme-row.reverse {
+    flex-direction: column;
+  }
+  .theme-media img {
+    height: 200px; /* fixed height when stacked */
+  }
+}
