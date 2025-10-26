@@ -195,8 +195,14 @@ const Navbar = () => {
                 <Link to="/who-we-are" className="dropdown-item">
                   Who We Are
                 </Link>
-                <Link to="/certifications" className="dropdown-item">
+                {/* <Link to="/certifications" className="dropdown-item">
                   Certifications
+                </Link> */}
+                <Link to="/why-us" className="dropdown-item">
+                  Why Us
+                </Link>
+                <Link to="/mission-and-vision" className="dropdown-item">
+                  Mission & Vision
                 </Link>
               </div>
             )}
@@ -234,10 +240,6 @@ const Navbar = () => {
           
           <Link to="/quality" className="navbar-item" onClick={() => isMobileOpen && setIsMobileOpen(false)}>
             Quality
-          </Link>
-          
-          <Link to="/facilities" className="navbar-item" onClick={() => isMobileOpen && setIsMobileOpen(false)}>
-            Facilities
           </Link>
 
           <Link to="/contact" className="navbar-item" onClick={() => isMobileOpen && setIsMobileOpen(false)}>
