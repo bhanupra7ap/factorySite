@@ -1,0 +1,121 @@
+/* Mission and Vision page styles — adapted from WhyUs card styles */
+.mission-page .content {
+  max-width: 1200px;
+  margin: 2rem auto;
+  padding: 0 1rem;
+}
+
+.mission-heading {
+  color: #0b3b5a;
+  margin-bottom: 1.25rem;
+}
+
+.mission-grid {
+  /* Force single-column layout so each card stacks vertically */
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 20px;
+  align-items: start;
+}
+
+.mission-card {
+  background: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 10px 28px rgba(2,30,52,0.08);
+  padding: 1.25rem;
+  position: relative;
+  overflow: visible;
+  min-height: auto; /* let content determine height when stacked */
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  width: 100%;
+}
+
+.mission-card .card-body {
+  z-index: 2;
+}
+
+.mission-card .card-title {
+  margin: 0 0 0.6rem 0;
+  color: #0b3b5a;
+  font-size: 1.1rem;
+}
+
+.mission-card .card-text {
+  color: #21333f;
+  line-height: 1.5;
+  font-size: 0.98rem;
+}
+
+.mission-card .card-image {
+  position: absolute;
+  top: -22px;
+  right: -22px;
+  width: 160px;
+  height: 120px;
+  object-fit: cover;
+  border-radius: 8px;
+  box-shadow: 0 8px 20px rgba(2,30,52,0.12);
+  z-index: 1;
+}
+
+@media (max-width: 760px) {
+  .mission-grid {
+    gap: 16px;
+  }
+  .mission-card .card-image {
+    width: 120px;
+    height: 90px;
+    top: -18px;
+    right: -12px;
+  }
+}
+
+/* Mobile adjustments */
+@media (max-width: 800px) {
+  .mission-page .card-title {
+    font-size: 0.74rem;
+  }
+
+  .mission-page .card-text {
+    font-size: 0.54rem;
+    line-height: 1.3;
+  }
+
+  .mission-page .card-body {
+    padding-right: 2px;
+  }
+}
+
+.mission-page .card-title {
+  font-size: clamp(0.9rem, 1.2vw, 1.18rem);
+}
+
+.mission-page .card-text {
+  font-size: clamp(0.86rem, 1.1vw, 1rem);
+}
+
+.mission-page .header-image {
+  height: 260px;
+}
+
+/* Ensure no hover transforms interfere with card layout */
+.mission-card,
+.mission-card * {
+  transition: none !important;
+}
+
+.card-list {
+  margin: 0.5rem 0 0 1.05rem;
+}
+
+.card-list li {
+  margin: 0.45rem 0;
+}
+
+.muted {
+  margin-top: 0.6rem;
+  font-weight: 600;
+  color: #23414f;
+}
