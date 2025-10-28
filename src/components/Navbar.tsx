@@ -221,19 +221,58 @@ const Navbar = () => {
               Products <span className="dropdown-arrow">▼</span>
             </span>
             {isProductsOpen && (
-              <div className="dropdown-menu">
-                <Link to="/fibc" className="dropdown-item">
-                  FIBC
-                </Link>
-                <Link to="/wpp-sacks" className="dropdown-item">
-                  WPP Sacks
-                </Link>
-                <Link to="/wpp-fabric" className="dropdown-item">
-                  WPP Fabric
-                </Link>
-                <Link to="/non-woven-bag" className="dropdown-item">
-                  Non Woven Shopping Bags
-                </Link>
+              <div className="dropdown-menu products-menu">
+                <div className="product-card">
+                  <div className="product-card-title">FIBC / Jumbo Bag</div>
+                  <Link to="/type-abc" className="dropdown-item">
+                    Types- A, B & C
+                  </Link>
+                  <Link to="/food-grade" className="dropdown-item">
+                    Food Grade Bags
+                  </Link>
+                  <Link to="/rpp" className="dropdown-item">
+                    RPP
+                  </Link>
+                  <Link to="/wpp-sacks" className="dropdown-item">
+                    WPP Sacks
+                  </Link>
+                  <Link to="/wpp-fabric" className="dropdown-item">
+                    WPP Fabric
+                  </Link>
+                  <Link to="/non-woven-bag" className="dropdown-item">
+                    Non Woven Shopping Bags
+                  </Link>
+                </div>
+                <div className="product-card">
+                  <div className="product-card-title">Customised</div>
+                  <Link to="/builder-bag" className="dropdown-item">
+                    Builder Bag
+                  </Link>
+                  <Link to="/circular-juki" className="dropdown-item">
+                    Circular Bag/ Juki
+                  </Link>
+                  <Link to="/conical" className="dropdown-item">
+                    Conical Bag
+                  </Link>
+                  <Link to="/four-panel" className="dropdown-item">
+                    Four Panel Bag
+                  </Link>
+                  <Link to="/one-two-loop" className="dropdown-item">
+                    One-Two Loop Bag
+                  </Link>
+                  <Link to="/q-baffel" className="dropdown-item">
+                    Q Bag/ Baffel
+                  </Link>
+                  <Link to="/tunnel" className="dropdown-item">
+                    Tunnel Bag
+                  </Link>
+                  <Link to="/u-panel" className="dropdown-item">
+                    U Panel Bag
+                  </Link>
+                  <Link to="/ventilated" className="dropdown-item">
+                    Ventilated Bag
+                  </Link>
+                </div>
               </div>
             )}
           </div>

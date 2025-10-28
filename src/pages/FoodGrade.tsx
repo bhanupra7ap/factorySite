@@ -9,11 +9,11 @@ const FIBC = () => {
           backgroundImage: `url(${headerImg})`
         }}
       >
-        <h1 className="header-title">FIBC Products</h1>
+        <h1 className="header-title">FIBC Food Grade</h1>
       </div>
       <div className="content">
-        <h2>FIBC Solutions</h2>
-        <p>Flexible Intermediate Bulk Containers. This is the FIBC products page. Content will be added later.</p>
+        <h2>FIBC Food Grade</h2>
+        <p>Test for FIBC Food Grade.</p>
       </div>
     </div>
   );

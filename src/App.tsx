@@ -6,7 +6,18 @@ import WhoWeAre from './pages/WhoWeAre';
 import WhyUs from './pages/WhyUs';
 import MissionAndVision from './pages/MissionAndVision';
 import Certifications from './pages/Certifications';
-import FIBC from './pages/FIBC';
+import BuilderBag from './pages/BuilderBag';
+import CircularJuki from './pages/CircularJuki';
+import Conical from './pages/Conical';
+import FoodGrade from './pages/FoodGrade';
+import FourPanel from './pages/FourPanel';
+import OneTwoLoop from './pages/OneTwoLoop';
+import QBaffel from './pages/QBaffel';
+import RPP from './pages/rPP';
+import Tunnel from './pages/Tunnel';
+import TypeABC from './pages/TypeABC';
+import UPanel from './pages/UPanel';
+import Ventilated from './pages/Ventilated';
 import WPPSacks from './pages/WPPSacks';
 import WPPFabric from './pages/WPPFabric';
 import NonWovenBags from './pages/NonWovenBags';
@@ -26,7 +37,18 @@ function App() {
             <Route path="/why-us" element={<WhyUs />} />
             <Route path="/mission-and-vision" element={<MissionAndVision />} />
             <Route path="/certifications" element={<Certifications />} />
-            <Route path="/fibc" element={<FIBC />} />
+            <Route path="/builder-bag" element={<BuilderBag />} />
+            <Route path="/circular-juki" element={<CircularJuki />} />
+            <Route path="/conical" element={<Conical />} />
+            <Route path="/food-grade" element={<FoodGrade />} />
+            <Route path="/four-panel" element={<FourPanel />} />
+            <Route path="/one-two-loop" element={<OneTwoLoop />} />
+            <Route path="/q-baffel" element={<QBaffel />} />
+            <Route path="/rpp" element={<RPP />} />
+            <Route path="/tunnel" element={<Tunnel />} />
+            <Route path="/type-abc" element={<TypeABC />} />
+            <Route path="/u-panel" element={<UPanel />} />
+            <Route path="/ventilated" element={<Ventilated />} />
             <Route path="/wpp-sacks" element={<WPPSacks />} />
             <Route path="/wpp-fabric" element={<WPPFabric />} />
             <Route path="/non-woven-bag" element={<NonWovenBags />} />
