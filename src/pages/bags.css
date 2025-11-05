@@ -1,0 +1,73 @@
+.bags-page {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+  color: #222;
+  line-height: 1.6;
+  padding-bottom: 4rem;
+}
+
+.bags-header-image {
+  background-size: cover;
+  background-position: center;
+  height: 240px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  position: relative;
+}
+
+.bags-header-image::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  background: rgba(0,0,0,0.35);
+}
+
+.bags-header-title {
+  position: relative;
+  z-index: 1;
+  font-size: 2rem;
+  margin: 0;
+  padding: 1rem 1rem;
+  text-align: center;
+}
+
+.bags-content {
+  max-width: 980px;
+  margin: 2rem auto;
+  padding: 0 1rem;
+}
+
+.bags-content h2 {
+  margin-top: 0;
+}
+
+.intro p,
+.type-section p,
+.choosing p {
+  margin: 0.5rem 0 1rem;
+}
+
+.type-section {
+  margin-top: 1.5rem;
+  border-top: 1px solid #e6e6e6;
+  padding-top: 1rem;
+}
+
+.features,
+.safety {
+  margin: 0.5rem 0 1rem 1.25rem;
+}
+
+.features li,
+.safety li {
+  margin: 0.4rem 0;
+}
+
+@media (min-width: 768px) {
+  .bags-header-title { font-size: 2.6rem; }
+  .bags-header-image { height: 320px; }
+}

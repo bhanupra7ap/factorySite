@@ -23,17 +23,17 @@ const Home = () => {
   const timeline: TimelineItem[] = [
     {
       title: "Integrated Manufacturing from Tape to FIBC Bags",
-      text: "Varuna Packtech is a vertically integrated manufacturer of high-strength FIBC bags — from tape extrusion to fabric weaving and bag conversion — ensuring consistent quality, flexible production, and cost-efficient solutions for diverse industrial needs.",
+      text: "Varuna Polypack is a vertically integrated manufacturer of high-strength FIBC bags — from tape extrusion to fabric weaving and bag conversion — ensuring consistent quality, flexible production, and cost-efficient solutions for diverse industrial needs.",
       image: facilitiesImg,
     },
     {
       title: "Committed to Responsible Manufacturing",
-      text: "At Varuna Packtech, sustainability drives every process, with focused efforts on recycling, renewable energy, and water management to achieve responsible and efficient manufacturing.",
+      text: "At Varuna Polypack, sustainability drives every process, with focused efforts on recycling, renewable energy, and water management to achieve responsible and efficient manufacturing.",
       image: qualityImg,
     },
     {
       title: "Adopting Technology for Smarter Production",
-      text: "Technology powers Varuna Packtech’s efficiency and precision — with digitally monitored, data-driven production lines that ensure consistent quality and globally competitive FIBC solutions.",
+      text: "Technology powers Varuna Polypack’s efficiency and precision — with digitally monitored, data-driven production lines that ensure consistent quality and globally competitive FIBC solutions.",
       image: wppFabricImg,
     },
   ];

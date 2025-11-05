@@ -20,7 +20,7 @@ const WhoWeAre = () => {
         <h2>About Us</h2>
         <div className="content-card with-side-image">
           <p>
-            Varuna Packtech is an emerging manufacturer and exporter of FIBC (Flexible
+            Varuna Polypack is an emerging manufacturer and exporter of FIBC (Flexible
             Intermediate Bulk Containers), also known as Jumbo Bags, Bulk Bags, or Big
             Bags. With a focus on quality craftsmanship and process control, we aim to
             deliver packaging solutions that are safe, reliable, and tailored to diverse
@@ -53,7 +53,7 @@ const WhoWeAre = () => {
               </div>
               <h3>Our Philosophy</h3>
               <p>
-                At Varuna Packtech, we believe that growth is meaningful only when it is
+                At Varuna Polypack, we believe that growth is meaningful only when it is
                 responsible and built on trust. Our philosophy is rooted in creating value — not
                 just through products, but through the relationships we build, the quality we
                 deliver, and the integrity that guides every decision. We strive to evolve with our
