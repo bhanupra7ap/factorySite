@@ -150,7 +150,7 @@ const Navbar = () => {
       <div className="navbar-container">
         <Link to="/" className="navbar-logo">
           <img src={logo} alt="Company Logo" className="logo-image" />
-          {/* <span className="logo-text">VARUNA POLYPACK</span> */}
+          {/* <span className="logo-text">Aries Packtech Pvt. Ltd.</span> */}
         </Link>
         
         <button

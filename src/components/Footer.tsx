@@ -14,11 +14,11 @@ const Footer = () => {
             </div>
             <div className="contact-item">
               <span className="contact-icon">✉️</span>
-              <span>info@factoryname.com</span>
+              <span>sales@ariespacktech.com</span>
             </div>
             <div className="contact-item">
               <span className="contact-icon">🌐</span>
-              <span>www.varunapolypack.com</span>
+              <span>www.ariespacktech.com</span>
             </div>
           </div>
           
@@ -63,7 +63,7 @@ const Footer = () => {
       </div>
       
       <div className="footer-bottom">
-        <p>&copy; 2025 Varuna Polypack. All rights reserved.</p>
+        <p>&copy; 2025 Aries Packtech Pvt. Ltd.. All rights reserved.</p>
       </div>
     </footer>
   );

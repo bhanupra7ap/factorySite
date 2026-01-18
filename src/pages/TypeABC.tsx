@@ -25,7 +25,7 @@ const FIBC = () => {
             into three main types — Type A, Type B, and Type C — each designed
             for specific handling and safety conditions.
           <br /> <br />
-            At Varuna Polypack, we provide FIBCs that are precisely
+            At Aries Packtech Pvt. Ltd., we provide FIBCs that are precisely
             designed and tested to match the operational and safety demands of
             your business. Our team assists in selecting the most suitable FIBC
             type for your material and environment to ensure efficiency and

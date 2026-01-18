@@ -144,10 +144,10 @@ const WPPSacks = () => {
           conditions.
         </p>
 
-        <h3>Partner with Varuna Polypack</h3>
+        <h3>Partner with Aries Packtech Pvt. Ltd.</h3>
         <p>
           With advanced manufacturing technology and decades of expertise in
-          polypropylene packaging, Varuna Polypack provides WPP FIBC sacks
+          polypropylene packaging, Aries Packtech Pvt. Ltd. provides WPP FIBC sacks
           that combine functionality, quality, and environmental responsibility.
           From standard models to customized designs, we deliver solutions that
           simplify bulk handling and improve operational efficiency.

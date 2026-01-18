@@ -16,7 +16,7 @@ const RPP = () => {
         <p className="intro">
           Sustainable Packaging for a Greener Tomorrow
         <br /> <br />
-          At Varuna Polypack, we believe sustainability begins with
+          At Aries Packtech Pvt. Ltd., we believe sustainability begins with
           responsibility. Our Recycled Polypropylene (PP) Bags are designed to
           minimize environmental impact while maintaining the strength and
           performance expected from premium packaging solutions. By embracing
@@ -122,7 +122,7 @@ const RPP = () => {
         <div className="type-section">
           <h3>Our Commitment to the Environment</h3>
           <p>
-            Sustainability is more than a practice — it’s our philosophy. At Varuna Polypack, we continue to innovate with eco-friendly packaging alternatives that protect both your goods and the environment. Every recycled PP bag we produce is a step toward waste reduction and resource conservation.
+            Sustainability is more than a practice — it’s our philosophy. At Aries Packtech Pvt. Ltd., we continue to innovate with eco-friendly packaging alternatives that protect both your goods and the environment. Every recycled PP bag we produce is a step toward waste reduction and resource conservation.
           <br /> <br />
 
           <h4>Our Sustainability Goals Include:</h4>

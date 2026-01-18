@@ -145,9 +145,9 @@ const WPPFabric = () => {
           environmentally conscious choice for modern packaging systems.
         </p>
 
-        <h3>Partner with Varuna Polypack</h3>
+        <h3>Partner with Aries Packtech Pvt. Ltd.</h3>
         <p>
-          With years of experience in woven fabric technology, Varuna Polypack
+          With years of experience in woven fabric technology, Aries Packtech Pvt. Ltd.
           delivers WPP fabrics that meet international quality standards and
           customer-specific performance criteria. Whether you need lightweight
           fabric for agricultural use or heavy-duty material for industrial

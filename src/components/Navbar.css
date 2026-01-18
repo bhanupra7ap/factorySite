@@ -75,7 +75,7 @@
 }
 
 .logo-image {
-  height: clamp(40px, 3vw, 80px);
+  height: clamp(65px, 3vw, 80px);
   margin-right: 15px;
 }
 
@@ -270,7 +270,7 @@
   }
   
   .logo-image {
-    height: clamp(30px, 8vw, 50px);
+    height: clamp(50px, 8vw, 50px);
   }
 }
 

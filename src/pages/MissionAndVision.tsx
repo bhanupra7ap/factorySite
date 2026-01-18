@@ -24,7 +24,7 @@ const MissionAndVision = () => {
                 To be a distinguished name in industrial packaging known for
                 reliability, precision, and forward-thinking innovation.
               <br /> <br />
-                At Varuna Polypack, our vision is to contribute to the global
+                At Aries Packtech Pvt. Ltd., our vision is to contribute to the global
                 packaging ecosystem through sustainable, technology-enabled,
                 and performance-oriented solutions that add measurable value to
                 every client partnership. We aim to create an organization that
@@ -107,7 +107,7 @@ const MissionAndVision = () => {
                 the core principles of reliability, efficiency, and
                 sustainability.
               <br /> <br />
-                Every effort at Varuna Polypack is directed toward shaping a
+                Every effort at Aries Packtech Pvt. Ltd. is directed toward shaping a
                 future where industrial packaging supports both business
                 success and environmental balance.
               </p>

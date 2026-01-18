@@ -8,12 +8,12 @@ import { useEffect, useRef, useState } from "react";
 const sections = [
   {
     title: "Overview",
-    text: `At Varuna Polypack, excellence is not an option — it is an ongoing pursuit. We are an emerging manufacturer of industrial packaging products, dedicated to delivering dependable and high-performance solutions for diverse industries. Our focus lies in maintaining superior quality standards, ensuring consistency across production, and building relationships founded on trust and integrity.`,
+    text: `At Aries Packtech Pvt. Ltd., excellence is not an option — it is an ongoing pursuit. We are an emerging manufacturer of industrial packaging products, dedicated to delivering dependable and high-performance solutions for diverse industries. Our focus lies in maintaining superior quality standards, ensuring consistency across production, and building relationships founded on trust and integrity.`,
     image: facilitiesImg,
   },
   {
     title: "Commitment to Quality",
-    text: `Quality defines every process within Varuna Polypack. Each stage — from extrusion and weaving to finishing and inspection — is governed by stringent internal benchmarks that guarantee structural strength, dimensional accuracy, and product uniformity. We have implemented systematic quality control procedures, ensuring that every batch adheres to both customer specifications and global industrial norms. Our organization is currently in the process of acquiring recognized certifications to further formalize and strengthen our quality management systems.`,
+    text: `Quality defines every process within Aries Packtech Pvt. Ltd.. Each stage — from extrusion and weaving to finishing and inspection — is governed by stringent internal benchmarks that guarantee structural strength, dimensional accuracy, and product uniformity. We have implemented systematic quality control procedures, ensuring that every batch adheres to both customer specifications and global industrial norms. Our organization is currently in the process of acquiring recognized certifications to further formalize and strengthen our quality management systems.`,
     image: qualityImg,
   },
   {
@@ -23,7 +23,7 @@ const sections = [
   },
   {
     title: "Customization and Design Flexibility",
-    text: `We recognize that every client’s requirement is distinct. Our design and development team works closely with customers to engineer packaging solutions that align perfectly with their handling, storage, and transportation needs. Whether the requirement involves specific dimensions, lifting configurations, or fabric specifications, Varuna Polypack provides complete flexibility to adapt and innovate.`,
+    text: `We recognize that every client’s requirement is distinct. Our design and development team works closely with customers to engineer packaging solutions that align perfectly with their handling, storage, and transportation needs. Whether the requirement involves specific dimensions, lifting configurations, or fabric specifications, Aries Packtech Pvt. Ltd. provides complete flexibility to adapt and innovate.`,
     image: facilitiesImg,
   },
   {
@@ -33,7 +33,7 @@ const sections = [
   },
   {
     title: "Innovation and Continuous Improvement",
-    text: `Varuna Polypack constantly seeks new methods to enhance performance and productivity. We invest time and effort into improving process efficiency, adopting advanced weaving techniques, and exploring eco-friendly materials. Our commitment to innovation allows us to remain relevant and responsive in a continuously evolving market.`,
+    text: `Aries Packtech Pvt. Ltd. constantly seeks new methods to enhance performance and productivity. We invest time and effort into improving process efficiency, adopting advanced weaving techniques, and exploring eco-friendly materials. Our commitment to innovation allows us to remain relevant and responsive in a continuously evolving market.`,
     image: wppFabricImg,
   },
   {
@@ -43,7 +43,7 @@ const sections = [
   },
   {
     title: "Sustainability and Responsibility",
-    text: `We are conscious of our environmental footprint and actively strive to optimize material usage and reduce waste generation. By adopting sustainable practices and responsible manufacturing principles, Varuna Polypack aims to contribute positively to the environment while meeting modern packaging demands.`,
+    text: `We are conscious of our environmental footprint and actively strive to optimize material usage and reduce waste generation. By adopting sustainable practices and responsible manufacturing principles, Aries Packtech Pvt. Ltd. aims to contribute positively to the environment while meeting modern packaging demands.`,
     image: qualityImg,
   },
   {
@@ -100,18 +100,18 @@ const WhyUs = () => {
           backgroundImage: `url(${headerImg})`,
         }}
       >
-        <h1 className="header-title">Why Choose Varuna Polypack</h1>
+        <h1 className="header-title">Why Choose Aries Packtech Pvt. Ltd.</h1>
       </div>
 
       <div className="content">
-        <h2 className="whyus-heading">Why Choose Varuna Polypack</h2>
+        <h2 className="whyus-heading">Why Choose Aries Packtech Pvt. Ltd.</h2>
 
         {/* Reuse Home's gallery layout so cards position exactly like the home principles */}
         <section className="gallery-section">
           <div
             className="gallery"
             role="list"
-            aria-label="Why Choose Varuna Polypack gallery"
+            aria-label="Why Choose Aries Packtech Pvt. Ltd. gallery"
             onMouseEnter={() => { pausedRef.current = true; }}
             onMouseLeave={() => { pausedRef.current = false; }}
           >
