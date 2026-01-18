@@ -27,7 +27,7 @@ const Footer = () => {
             <div className="address">
               <span className="contact-icon">📍</span>
               <div>
-                <p>Varanasi, Uttar Pradesh</p>
+                <p>Ayodhya, Uttar Pradesh</p>
                 <p>India</p>
               </div>
             </div>
