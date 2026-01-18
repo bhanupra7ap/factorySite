@@ -46,7 +46,7 @@ const Footer = () => {
         <div className="social-section">
           <h3>Follow Us</h3>
           <div className="social-links">
-            <a href="https://linkedin.com" className="social-link" aria-label="LinkedIn">
+            <a href="https://www.linkedin.com/company/111493268" className="social-link" aria-label="LinkedIn">
               <FaLinkedin />
             </a>
             <a href="https://facebook.com" className="social-link" aria-label="Facebook">
