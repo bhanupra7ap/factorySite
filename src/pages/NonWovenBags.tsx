@@ -291,11 +291,6 @@ const NonWovenBags = () => {
               <p className="p-card">Reliable production schedules and on-time delivery guaranteed.</p>
             </div>
           </div>
-          <p className="alt" style={{ marginTop: '2rem' }}>
-            <strong>Contact us today</strong> to explore our collection of non-woven
-            shopping bags — and take the first step toward a greener, smarter,
-            and more sustainable packaging future.
-          </p>
         </section>
       </main>
     </div>
