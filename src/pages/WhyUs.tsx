@@ -1,4 +1,4 @@
-import headerImg from "../assets/fibc-header.jpg";
+import headerImg from "../assets/fibc-header.png";
 import facilitiesImg from "../assets/facilities-header.jpg";
 import qualityImg from "../assets/quality-header.avif";
 import wppFabricImg from "../assets/wpp-fabric-header.avif";

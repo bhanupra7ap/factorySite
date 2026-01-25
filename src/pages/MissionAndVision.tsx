@@ -1,4 +1,4 @@
-import headerImg from "../assets/fibc-header.jpg";
+import headerImg from "../assets/fibc-header.png";
 import "./MissionAndVision.css";
 
 const MissionAndVision = () => {

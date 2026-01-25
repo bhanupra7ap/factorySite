@@ -1,4 +1,4 @@
-import headerImg from "../assets/non-woven-header.avif";
+import headerImg from "../assets/non-woven-header.png";
 import nonWovenBagsImg1 from "../assets/nonwoven1.png";
 import nonWovenBagsImg2 from "../assets/nonwoven2.png";
 import "./bags.css";

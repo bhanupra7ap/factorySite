@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { FiMapPin, FiPhone, FiMail } from "react-icons/fi";
-import headerImg from "../assets/contact-header.avif";
+import headerImg from "../assets/contact-header.png";
 import "./ContactUs.css";
 import { env, sanitizedPhone } from "../config/env";
 

@@ -1,4 +1,4 @@
-import headerImg from "../assets/fibc-header.jpg";
+import headerImg from "../assets/rpp-header.png";
 import rpp4 from "../assets/rpp4.png";
 import rpp5 from "../assets/rpp5.png";
 import rpp6 from "../assets/rpp6.png";

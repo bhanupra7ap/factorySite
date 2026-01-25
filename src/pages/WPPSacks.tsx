@@ -1,4 +1,4 @@
-import headerImg from "../assets/wpp-sack-header.jpg";
+import headerImg from "../assets/wpp-sack-header.png";
 import wppSackImg1 from "../assets/wppsack1.png";
 import wppSackImg2 from "../assets/wppsack2.png";
 import wppSackImg3 from "../assets/wppsack3.png";

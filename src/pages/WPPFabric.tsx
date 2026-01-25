@@ -1,4 +1,4 @@
-import headerImg from "../assets/wpp-fabric-header.avif";
+import headerImg from "../assets/wpp-fabric-header.png";
 import wppFabricImg1 from "../assets/wppfabric1.png";
 import wppFabricImg2 from "../assets/wppfabric2.png";
 import wppFabricImg3 from "../assets/wppfabric3.png";

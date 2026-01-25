@@ -1,4 +1,4 @@
-import headerImg from "../assets/who-we-are-header.avif";
+import headerImg from "../assets/who-we-are-header.png";
 import facilitiesImg from "../assets/home-header.jpg";
 import imgSustainability from "../assets/non-woven-header.avif";
 import imgCustomers from "../assets/contact-header.avif";

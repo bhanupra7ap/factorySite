@@ -121,7 +121,25 @@
 
 /* Make sure the heading spacing matches the site */
 .whyus-page .header-image {
-  height: 260px;
+  height: 576px;
+  max-height: 576px;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+@media (max-width: 1024px) {
+  .whyus-page .header-image {
+    height: 56.25vw; /* Maintains 16:9 aspect ratio (576/1024) */
+    max-height: 576px;
+  }
+}
+
+@media (max-width: 768px) {
+  .whyus-page .header-image {
+    height: 50vw;
+    max-height: 400px;
+  }
 }
 
 /* No transitions/animations per request: override any hover transforms */

@@ -39,9 +39,26 @@
 
 /* Use WhoWeAre's .header-image base styles and only override the background */
 .header-image.quality-header {
-  background-image: url('../assets/quality-header.avif');
+  background-image: url('../assets/quality-header.png');
+  height: 576px;
+  max-height: 576px;
   background-size: cover;
   background-position: center;
+  background-repeat: no-repeat;
+}
+
+@media (max-width: 1024px) {
+  .header-image.quality-header {
+    height: 56.25vw; /* Maintains 16:9 aspect ratio (576/1024) */
+    max-height: 576px;
+  }
+}
+
+@media (max-width: 768px) {
+  .header-image.quality-header {
+    height: 50vw;
+    max-height: 400px;
+  }
 }
 
 /* Spacing helpers */
