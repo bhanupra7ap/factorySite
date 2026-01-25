@@ -57,38 +57,6 @@ const FIBC = () => {
         </div>
 
         <div className="bags-list">
-          <h3>Available Sizes</h3>
-          <p>We supply standard and custom-size Builder Bags to meet diverse site requirements:</p>
-          <table style={{ width: '100%', borderCollapse: 'collapse', margin: '1rem 0' }}>
-            <thead>
-              <tr style={{ backgroundColor: '#f5f5f5' }}>
-                <th style={{ padding: '0.75rem', textAlign: 'left', borderBottom: '2px solid #ddd' }}>Size (cm)</th>
-                <th style={{ padding: '0.75rem', textAlign: 'left', borderBottom: '2px solid #ddd' }}>Capacity</th>
-                <th style={{ padding: '0.75rem', textAlign: 'left', borderBottom: '2px solid #ddd' }}>Availability</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td style={{ padding: '0.75rem', borderBottom: '1px solid #eee' }}>85 x 85 x 85</td>
-                <td style={{ padding: '0.75rem', borderBottom: '1px solid #eee' }}>1000 kg</td>
-                <td style={{ padding: '0.75rem', borderBottom: '1px solid #eee' }}>Ex-stock Available</td>
-              </tr>
-              <tr>
-                <td style={{ padding: '0.75rem', borderBottom: '1px solid #eee' }}>90 x 90 x 90</td>
-                <td style={{ padding: '0.75rem', borderBottom: '1px solid #eee' }}>1000 kg</td>
-                <td style={{ padding: '0.75rem', borderBottom: '1px solid #eee' }}>Ex-stock & Customizable</td>
-              </tr>
-              <tr>
-                <td style={{ padding: '0.75rem', borderBottom: '1px solid #eee' }}>90 x 90 x 110</td>
-                <td style={{ padding: '0.75rem', borderBottom: '1px solid #eee' }}>1500 kg</td>
-                <td style={{ padding: '0.75rem', borderBottom: '1px solid #eee' }}>On Order</td>
-              </tr>
-            </tbody>
-          </table>
-          <p>Custom sizes and printing options are available upon request to suit your brand or material-handling needs.</p>
-        </div>
-
-        <div className="bags-list">
           <h3>Key Applications</h3>
           <p>Builder Bags are versatile and used across multiple industries, including:</p>
           <ul>
@@ -97,28 +65,6 @@ const FIBC = () => {
             <li><strong>Landscaping Projects</strong> – Moving soil and debris in landscaping projects</li>
             <li><strong>Bulk Handling</strong> – Bulk handling of fertilizers, cement, or dry mix materials</li>
           </ul>
-        </div>
-
-        <div className="bags-section">
-          <h3>Why Choose Our Builder Bags?</h3>
-          <div className="bags-features">
-            <div className="feature-card">
-              <h4>Rugged Construction</h4>
-              <p className="p-card">Crafted from woven polypropylene with reinforced loops, our bags maintain their shape even under maximum load. They are built to handle bulk aggregates and construction waste without tearing or leakage.</p>
-            </div>
-            <div className="feature-card">
-              <h4>Custom Branding</h4>
-              <p className="p-card">We offer multi-color printing and logo customization to enhance your company's visibility while ensuring product traceability on every job site.</p>
-            </div>
-            <div className="feature-card">
-              <h4>Safe Handling</h4>
-              <p className="p-card">With strong lifting loops and an optimized design for forklifts and cranes, these bags make bulk movement simple, quick, and safe.</p>
-            </div>
-            <div className="feature-card">
-              <h4>Multiple-Use Options</h4>
-              <p className="p-card">Available in both single-trip and multi-trip variants, the bags can be reused depending on your handling cycles and storage requirements.</p>
-            </div>
-          </div>
         </div>
 
         <div className="bags-list">
