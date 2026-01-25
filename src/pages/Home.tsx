@@ -139,7 +139,8 @@ const Home = () => {
                   tabIndex={0}
                   aria-expanded={isActive}
                   className={`gallery-item ${isActive ? "active" : "inactive"}`}
-                  // remove mouse enter/leave swap behavior; clicking dots below will control selection
+                  onMouseEnter={() => { pausedRef.current = true; }}
+                  onMouseLeave={() => { pausedRef.current = false; }}
                   style={{
                     transform: `translate(-50%, -50%) translateX(${translate}px) scale(${scale})`,
                     zIndex: 100 - distance,

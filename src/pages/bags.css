@@ -1,73 +1,1021 @@
+/* Common Bag Page Styles - Consolidated from TypeABC, FoodGrade, rPP, and WPPSacks */
+
+/* Base Page Styles */
 .bags-page {
+  min-height: 100vh;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial;
   color: #222;
   line-height: 1.6;
-  padding-bottom: 4rem;
 }
 
+/* Header Styles - Simple version for TypeABC */
 .bags-header-image {
+  width: 100%;
+  height: 400px;
   background-size: cover;
   background-position: center;
-  height: 240px;
   display: flex;
   align-items: center;
   justify-content: center;
-  color: #fff;
   position: relative;
 }
 
-.bags-header-image::after {
-  content: "";
+.bags-header-image::before {
+  content: '';
   position: absolute;
+  top: 0;
   left: 0;
   right: 0;
-  top: 0;
   bottom: 0;
-  background: rgba(0,0,0,0.35);
+  background: rgba(0, 0, 0, 0.4);
 }
 
-.bags-header-title {
+.header-title {
   position: relative;
   z-index: 1;
-  font-size: 2rem;
-  margin: 0;
-  padding: 1rem 1rem;
+  color: white;
+  font-size: 3rem;
+  font-weight: 700;
   text-align: center;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+  padding: 0 20px;
+}
+
+/* Hero Section - for FoodGrade, rPP, WPPSacks */
+.bags-hero {
+  position: relative;
+  height: 70vh;
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.bags-hero::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(135deg, rgba(0, 0, 0, 0.6) 0%, rgba(0, 40, 80, 0.7) 100%);
+  z-index: 1;
+}
+
+.bags-hero-content {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  color: white;
+  padding: 2rem;
+  animation: fadeInUp 1s ease-out;
+}
+
+.bags-hero h1 {
+  font-size: 4rem;
+  font-weight: 700;
+  margin: 0 0 1rem 0;
+  text-shadow: 2px 4px 8px rgba(0, 0, 0, 0.3);
+  letter-spacing: 1px;
+  line-height: 1.2;
+}
+
+.bags-hero-subtitle {
+  font-size: 1.5rem;
+  font-weight: 300;
+  margin: 0;
+  opacity: 0.95;
+  letter-spacing: 0.5px;
+}
+
+/* Content Containers */
+.content {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 60px 20px;
 }
 
 .bags-content {
-  max-width: 980px;
-  margin: 2rem auto;
-  padding: 0 1rem;
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 4rem 2rem;
 }
 
-.bags-content h2 {
-  margin-top: 0;
+/* Introduction Sections */
+.intro {
+  margin-bottom: 60px;
 }
 
-.intro p,
-.type-section p,
-.choosing p {
-  margin: 0.5rem 0 1rem;
+.intro h2 {
+  font-size: 2.5rem;
+  color: #2c3e50;
+  margin-bottom: 20px;
 }
 
-.type-section {
-  margin-top: 1.5rem;
-  border-top: 1px solid #e6e6e6;
-  padding-top: 1rem;
+.intro h3 {
+  font-size: 1.8rem;
+  color: #34495e;
+  margin: 30px 0 15px;
+  text-align: center;
 }
 
-.features,
-.safety {
-  margin: 0.5rem 0 1rem 1.25rem;
+.intro h3::after {
+  content: '';
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80px;
+  height: 4px;
+  background: linear-gradient(90deg, #0066cc, #00aaff);
+  border-radius: 2px;
 }
 
-.features li,
+.intro p {
+  font-size: 1.1rem;
+  line-height: 1.8;
+  color: #555;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.intro p.alt {
+  font-size: 1.1rem;
+  line-height: 1.8;
+  color: #555;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.bags-intro {
+  text-align: center;
+  margin-bottom: 5rem;
+  animation: fadeIn 1.2s ease-out;
+}
+
+.bags-intro h2 {
+  font-size: 2.8rem;
+  color: #1a2332;
+  margin-bottom: 2rem;
+  font-weight: 600;
+  position: relative;
+  display: inline-block;
+}
+
+.bags-intro h2::after {
+  content: '';
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80px;
+  height: 4px;
+  background: linear-gradient(90deg, #0066cc, #00aaff);
+  border-radius: 2px;
+}
+
+.bags-intro p {
+  font-size: 1.2rem;
+  line-height: 1.8;
+  color: #4a5568;
+  max-width: 900px;
+  margin: 2rem auto 0;
+}
+
+/* Images */
+.typeabc-image {
+  display: block;
+  margin: 40px auto;
+  max-width: 800px;
+  width: 100%;
+  border-radius: 16px;
+}
+
+/* TypeABC Card Layout */
+.types-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+  margin-bottom: 60px;
+}
+
+.type-card {
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  padding: 30px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  display: flex;
+  flex-direction: column;
+}
+
+.type-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.15);
+}
+
+.type-card-title {
+  font-size: 1.8rem;
+  color: #2c3e50;
+  margin-bottom: 25px;
+  text-align: center;
+  padding-bottom: 15px;
+  border-bottom: 3px solid #3498db;
+  min-height: 70px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.card-section {
+  margin-bottom: 25px;
+  flex: 1;
+}
+
+.card-section h4 {
+  font-size: 1.2rem;
+  color: #2980b9;
+  margin-bottom: 12px;
+  font-weight: 600;
+  min-height: 30px;
+}
+
+.card-section p:not(.p1) {
+  font-size: 1rem;
+  line-height: 1.7;
+  color: #555;
+  margin: 0;
+}
+
+p.p1 {
+  font-size: 1rem;
+  line-height: 1.8;
+  color: #555;
+  margin: 0;
+}
+
+.card-section ul {
+  margin: 10px 0;
+  padding-left: 20px;
+}
+
+.card-section ul li {
+  font-size: 1rem;
+  line-height: 1.8;
+  color: #555;
+  margin-bottom: 8px;
+}
+
+.features li::marker {
+  color: #27ae60;
+}
+
 .safety li {
-  margin: 0.4rem 0;
+  color: #e74c3c;
 }
 
-@media (min-width: 768px) {
-  .bags-header-title { font-size: 2.6rem; }
-  .bags-header-image { height: 320px; }
+.safety li::marker {
+  color: #e74c3c;
+}
+
+/* Choosing/Final Section */
+.choosing {
+  background: #f8f9fa;
+  border-radius: 12px;
+  padding: 40px;
+  text-align: center;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.choosing h3 {
+  font-size: 2rem;
+  color: #2c3e50;
+  margin-bottom: 20px;
+}
+
+.choosing p {
+  font-size: 1.1rem;
+  line-height: 1.8;
+  color: #555;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.choosing ul {
+  list-style: none;
+  padding: 0;
+  margin: 20px auto;
+  max-width: 700px;
+  text-align: left;
+}
+
+.choosing ul li {
+  font-size: 1.1rem;
+  line-height: 1.8;
+  color: #555;
+  margin-bottom: 10px;
+  padding-left: 30px;
+  position: relative;
+}
+
+.choosing ul li::before {
+  content: '✓';
+  position: absolute;
+  left: 0;
+  color: #3498db;
+  font-weight: bold;
+  font-size: 1.3rem;
+}
+
+/* Image Section for Other Pages */
+.bags-image-section {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3rem;
+  align-items: center;
+  margin-bottom: 5rem;
+  padding: 3rem;
+  background: white;
+  border-radius: 20px;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.bags-image-section:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 50px rgba(0, 0, 0, 0.12);
+}
+
+.bags-image-section.reverse {
+  grid-template-columns: 1fr 1fr;
+}
+
+.bags-image-section.reverse .section-content {
+  order: 2;
+}
+
+.bags-image-section.reverse .section-image {
+  order: 1;
+}
+
+.section-image {
+  width: 100%;
+  height: 400px;
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+}
+
+.section-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.section-image:hover img {
+  transform: scale(1.08);
+}
+
+.section-content h3 {
+  font-size: 2.2rem;
+  color: #1a2332;
+  margin-bottom: 1.5rem;
+  font-weight: 600;
+}
+
+.section-content p {
+  font-size: 1.1rem;
+  line-height: 1.8;
+  color: #4a5568;
+  margin-bottom: 1.5rem;
+}
+
+/* Generic Section */
+.bags-section {
+  margin-bottom: 5rem;
+  animation: fadeInUp 1s ease-out;
+}
+
+.bags-section h3 {
+  text-align: center;
+  font-size: 2.5rem;
+  color: #0066cc;
+  margin-bottom: 3rem;
+}
+
+.bags-section h3::after {
+  content: '';
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80px;
+  height: 4px;
+  background: linear-gradient(90deg, #0066cc, #00aaff);
+  border-radius: 2px;
+}
+
+/* Feature Cards */
+.bags-features {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+  margin: 3rem 0;
+}
+
+.feature-card {
+  background: white;
+  padding: 1.5rem;
+  border-radius: 15px;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+  transition: all 0.3s ease;
+  border-left: 4px solid #0066cc;
+}
+
+.feature-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 12px 35px rgba(0, 102, 204, 0.15);
+  border-left-color: #00aaff;
+}
+
+.feature-card h4 {
+  font-size: 1rem;
+  color: #1a2332;
+  margin-bottom: 1rem;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.feature-card h4::before {
+  content: '✓';
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 28px;
+  height: 28px;
+  background: linear-gradient(135deg, #0066cc, #00aaff);
+  color: white;
+  border-radius: 50%;
+  font-size: 1rem;
+  font-weight: bold;
+  flex-shrink: 0;
+}
+
+.feature-card p {
+  font-size: 0.8rem;
+  line-height: 1.7;
+  color: #4a5568;
+}
+
+/* List Sections */
+.bags-list {
+  background: white;
+  padding: 3rem;
+  margin: 2rem 0;
+}
+
+.bags-list h3 {
+  font-size: 2.2rem;
+  color: #1a2332;
+  margin: 0 0 2rem 0;
+  font-weight: 600;
+  text-align: center;
+  position: relative;
+  display: inline-block;
+  width: 100%;
+}
+
+.bags-list h3::after {
+  content: '';
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80px;
+  height: 4px;
+  background: linear-gradient(90deg, #0066cc, #00aaff);
+  border-radius: 2px;
+}
+
+.bags-list ul {
+  list-style: none;
+  padding: 0;
+  margin: 2rem 0 0 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 1.5rem;
+}
+
+.bags-list li {
+  padding: 1.8rem 2rem;
+  background: white;
+  border-radius: 15px;
+  font-size: 0.9rem;
+  color: #2d3748;
+  transition: all 0.3s ease;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.12);
+  border-left: 4px solid #0066cc;
+  text-align: left;
+  font-weight: 500;
+}
+
+.bags-list li:hover {
+  background: linear-gradient(135deg, #0066cc 0%, #00aaff 100%);
+  color: white;
+  border-left-color: #00aaff;
+  box-shadow: 0 12px 40px rgba(0, 102, 204, 0.3);
+  transform: translateY(-5px);
+}
+
+.bags-list li strong {
+  font-weight: 600;
+  display: block;
+  margin-bottom: 0.3rem;
+  font-size: 1.1rem;
+}
+
+/* Process section */
+.process-section {
+  background: white;
+  padding: 3rem;
+  border-radius: 20px;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
+  margin-bottom: 5rem;
+  animation: fadeInUp 1s ease-out;
+}
+
+.process-section h3 {
+  text-align: center;
+  font-size: 2.5rem;
+  color: #0066cc;
+  margin-bottom: 3rem;
+}
+
+.process-section h3::after {
+  content: '';
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80px;
+  height: 4px;
+  background: linear-gradient(90deg, #0066cc, #00aaff);
+  border-radius: 2px;
+}
+
+.process-section h4 {
+  font-size: 1.5rem;
+  color: #0066cc;
+  margin-bottom: 1.5rem;
+  font-weight: 600;
+}
+
+/* Process Flow Diagram Styles */
+.process-flow {
+  margin: 4rem auto;
+  max-width: 700px;
+  position: relative;
+}
+
+.process-step {
+  display: flex;
+  align-items: center;
+  margin-bottom: 2rem;
+  position: relative;
+  gap: 2rem;
+}
+
+/* Blue Ribbon Connectors */
+.process-step::after {
+  content: '';
+  position: absolute;
+  background: linear-gradient(135deg, #0066cc 0%, #0099ff 100%);
+  z-index: 0;
+}
+
+/* Step 1 - Ribbon on right and bottom */
+.step-1::after {
+  width: 80px;
+  height: calc(100% + 2rem);
+  right: -40px;
+  top: 50%;
+  border-radius: 0 50px 50px 0;
+}
+
+/* Step 2 - Ribbon on left and bottom */
+.step-2::after {
+  width: 80px;
+  height: calc(100% + 2rem);
+  left: -40px;
+  top: 50%;
+  border-radius: 50px 0 0 50px;
+}
+
+/* Step 3 - Ribbon on right and bottom */
+.step-3::after {
+  width: 80px;
+  height: calc(100% + 2rem);
+  right: -40px;
+  top: 50%;
+  border-radius: 0 50px 50px 0;
+}
+
+/* Step 4 - Ribbon on left only (last step) */
+.step-4::after {
+  width: 80px;
+  height: 100%;
+  left: -40px;
+  top: 0;
+  border-radius: 50px 0 0 50px;
+}
+
+.process-step::before {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-radius: 50px;
+  z-index: 0;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+}
+
+.step-icon {
+  width: 120px;
+  height: 120px;
+  min-width: 120px;
+  border-radius: 50%;
+  background: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+  position: relative;
+  z-index: 2;
+}
+
+.step-icon svg {
+  width: 50px;
+  height: 50px;
+  stroke-width: 2;
+}
+
+.step-content {
+  flex: 1;
+  padding: 2rem 2.5rem;
+  border-radius: 50px;
+  position: relative;
+  z-index: 1;
+  background: white;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.step-number {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #333;
+  margin: 0;
+  letter-spacing: 0.5px;
+}
+
+.step-title {
+  font-size: 1.3rem;
+  font-weight: 600;
+  color: #1a2332;
+  margin: 0;
+}
+
+.step-description {
+  font-size: 0.95rem;
+  line-height: 1.6;
+  color: #4a5568;
+  margin: 0;
+}
+
+/* Step 1 - Brown/Gold */
+.step-1::before {
+  background: linear-gradient(135deg, #d4a574 0%, #8b6f47 100%);
+}
+
+.step-1 .step-icon svg {
+  stroke: #8b6f47;
+}
+
+/* Step 2 - Pink/Magenta */
+.step-2 {
+  flex-direction: row-reverse;
+}
+
+.step-2::before {
+  background: linear-gradient(135deg, #e91e63 0%, #c2185b 100%);
+}
+
+.step-2 .step-icon svg {
+  stroke: #c2185b;
+}
+
+/* Step 3 - Teal/Cyan */
+.step-3::before {
+  background: linear-gradient(135deg, #26c6da 0%, #00838f 100%);
+}
+
+.step-3 .step-icon svg {
+  stroke: #00838f;
+}
+
+/* Step 4 - Dark Gray/Black */
+.step-4 {
+  flex-direction: row-reverse;
+}
+
+.step-4::before {
+  background: linear-gradient(135deg, #555 0%, #2c2c2c 100%);
+}
+
+.step-4 .step-icon svg {
+  stroke: #2c2c2c;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .process-step {
+    flex-direction: column !important;
+    text-align: center;
+    gap: 1rem;
+  }
+
+  .step-icon {
+    width: 100px;
+    height: 100px;
+    min-width: 100px;
+  }
+
+  .step-icon svg {
+    width: 40px;
+    height: 40px;
+  }
+
+  .step-content {
+    padding: 1.5rem 2rem;
+    border-radius: 30px;
+  }
+
+  .step-number {
+    font-size: 1.2rem;
+  }
+
+  .step-title {
+    font-size: 1.1rem;
+  }
+
+  .step-description {
+    font-size: 0.9rem;
+  }
+}
+
+/* Sustainability Section */
+.sustainability-section {
+  background: white;
+  padding: 5rem 3rem;
+  border-radius: 20px;
+  margin: 4rem 0;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
+}
+
+.sustainability-section h3 {
+  font-size: 2.5rem;
+  color: #1a2332;
+  margin-bottom: 1.5rem;
+  font-weight: 600;
+  text-align: center;
+  position: relative;
+  display: inline-block;
+  width: 100%;
+}
+
+.sustainability-section h3::after {
+  content: '';
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80px;
+  height: 4px;
+  background: linear-gradient(90deg, #0066cc, #00aaff);
+  border-radius: 2px;
+}
+
+.sustainability-section > p {
+  font-size: 1.2rem;
+  line-height: 1.8;
+  color: #4a5568;
+  max-width: 800px;
+  margin: 2rem auto 3rem;
+  text-align: center;
+}
+
+.sustainability-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2rem;
+  margin-top: 3rem;
+}
+
+.sustainability-card {
+  background: white;
+  padding: 2rem;
+  border-radius: 15px;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+  transition: all 0.3s ease;
+  border-left: 4px solid #0066cc;
+}
+
+.sustainability-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 12px 35px rgba(0, 102, 204, 0.15);
+  border-left-color: #00aaff;
+}
+
+.sustainability-card h4 {
+  font-size: 1rem;
+  color: #1a2332;
+  margin-bottom: 1rem;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.sustainability-card h4::before {
+  content: '✓';
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 28px;
+  height: 28px;
+  background: linear-gradient(135deg, #0066cc, #00aaff);
+  color: white;
+  border-radius: 50%;
+  font-size: 1rem;
+  font-weight: bold;
+  flex-shrink: 0;
+}
+
+.sustainability-card p {
+  font-size: 1rem;
+  line-height: 1.7;
+  color: #4a5568;
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .types-container {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+
+  .type-card-title {
+    min-height: auto;
+  }
+
+  .bags-hero h1 {
+    font-size: 3rem;
+  }
+
+  .bags-image-section,
+  .bags-image-section.reverse {
+    grid-template-columns: 1fr;
+  }
+
+  .bags-image-section.reverse .section-content,
+  .bags-image-section.reverse .section-image {
+    order: initial;
+  }
+
+  .section-image {
+    height: 350px;
+  }
+
+  .bags-features {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .bags-list {
+    padding: 2rem;
+  }
+
+  .bags-list ul {
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  }
+}
+
+@media (max-width: 768px) {
+  .header-title {
+    font-size: 2rem;
+  }
+
+  .intro h2 {
+    font-size: 2rem;
+  }
+
+  .intro h3 {
+    font-size: 1.5rem;
+  }
+
+  .choosing h3 {
+    font-size: 1.6rem;
+  }
+
+  .type-card {
+    padding: 25px;
+  }
+
+  .type-card-title {
+    font-size: 1.5rem;
+  }
+
+  .bags-hero {
+    height: 60vh;
+  }
+
+  .bags-hero h1 {
+    font-size: 2.5rem;
+  }
+
+  .bags-hero-subtitle {
+    font-size: 1.2rem;
+  }
+
+  .bags-content {
+    padding: 3rem 1.5rem;
+  }
+
+  .bags-intro h2 {
+    font-size: 2rem;
+  }
+
+  .section-content h3 {
+    font-size: 1.8rem;
+  }
+
+  .bags-features {
+    grid-template-columns: 1fr;
+  }
+
+  .bags-list {
+    padding: 2rem 1.5rem;
+  }
+
+  .bags-list h3 {
+    font-size: 1.8rem;
+  }
+
+  .bags-list ul {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+
+  .bags-list li {
+    padding: 1.5rem 1.8rem;
+  }
+
+  .sustainability-section {
+    padding: 3rem 2rem;
+  }
+
+  .sustainability-section h3 {
+    font-size: 2rem;
+  }
+
+  .sustainability-grid {
+    grid-template-columns: 1fr;
+  }
 }

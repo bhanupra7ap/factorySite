@@ -211,7 +211,7 @@
 }
 
 .content h2 {
-  color: #ff8c00;
+  color: #0759ad;
   margin-bottom: 2rem;
   font-size: 2.5rem;
   font-weight: 700;
@@ -227,12 +227,12 @@
   left: 0;
   width: 80px;
   height: 4px;
-  background: linear-gradient(90deg, #ff8c00, #ff6b00);
+  background: linear-gradient(90deg, #0759ad, #05478a);
   border-radius: 2px;
 }
 
 .content h3 {
-  color: #ff8c00;
+  color: #0759ad;
   margin-bottom: 1rem;
   font-size: 1.75rem;
   font-weight: 700;
@@ -246,13 +246,30 @@
   color: #333;
   line-height: 1.8;
   font-size: 1.2rem;
+}
+
+.content p.card,
+.content .p-card {
+  color: #333;
+  line-height: 1.8;
+  font-size: 1rem;
+}
+
+/* Alternative paragraph style - lighter, more minimal */
+.content p.alt,
+.content .p-alt {
+  color: #333;
+  line-height: 1.8;
+  font-size: 1.2rem;
   background: #f9f9f9;
   padding: 2rem;
   border-radius: 15px;
-  border-left: 5px solid #ff8c00;
+  border-left: 5px solid #0759ad;
   margin-top: 1rem;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
+
+
 
 @media (max-width: 768px) {
   .header-image {
