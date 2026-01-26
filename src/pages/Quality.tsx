@@ -5,7 +5,6 @@ import inhouseTesting from "../assets/quality-inhouse-testing-and-control.png";
 import teamAndTraining from "../assets/quality-team-and-training.png";
 import lookingAhead from "../assets/quality-looking-ahead.png";
 import ourQualityPhilosophy from "../assets/quality-our-quality-philosophy.png";
-import altQualityImg from "../assets/non-woven-header.avif";
 import "./Quality.css";
 
 const policies = [
