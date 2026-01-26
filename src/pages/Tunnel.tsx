@@ -57,50 +57,6 @@ const FIBC = () => {
         </div>
 
         <div className="bags-list">
-          <h3>Design & Technical Specifications</h3>
-          <p>Tunnel Bags are manufactured using UV-stabilized, high-tensile woven polypropylene fabric, ensuring durability, strength, and long life even under outdoor exposure.</p>
-          <table style={{ width: '100%', borderCollapse: 'collapse', margin: '1rem 0' }}>
-            <thead>
-              <tr style={{ backgroundColor: '#f5f5f5' }}>
-                <th style={{ padding: '0.75rem', textAlign: 'left', borderBottom: '2px solid #ddd' }}>Feature</th>
-                <th style={{ padding: '0.75rem', textAlign: 'left', borderBottom: '2px solid #ddd' }}>Specification</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td style={{ padding: '0.75rem', borderBottom: '1px solid #eee' }}>Material</td>
-                <td style={{ padding: '0.75rem', borderBottom: '1px solid #eee' }}>100% Virgin or Recycled Woven Polypropylene (UV Stabilized)</td>
-              </tr>
-              <tr>
-                <td style={{ padding: '0.75rem', borderBottom: '1px solid #eee' }}>Standard Size</td>
-                <td style={{ padding: '0.75rem', borderBottom: '1px solid #eee' }}>75 x 85 x 95 cm (Customizable)</td>
-              </tr>
-              <tr>
-                <td style={{ padding: '0.75rem', borderBottom: '1px solid #eee' }}>Safe Working Load (SWL)</td>
-                <td style={{ padding: '0.75rem', borderBottom: '1px solid #eee' }}>500 kg – 1000 kg (up to 3000 kg on request)</td>
-              </tr>
-              <tr>
-                <td style={{ padding: '0.75rem', borderBottom: '1px solid #eee' }}>Safety Factor (SF)</td>
-                <td style={{ padding: '0.75rem', borderBottom: '1px solid #eee' }}>5:1 or 6:1</td>
-              </tr>
-              <tr>
-                <td style={{ padding: '0.75rem', borderBottom: '1px solid #eee' }}>Handling</td>
-                <td style={{ padding: '0.75rem', borderBottom: '1px solid #eee' }}>Forklift-compatible tunnel loops for single-person operation</td>
-              </tr>
-              <tr>
-                <td style={{ padding: '0.75rem', borderBottom: '1px solid #eee' }}>Filling & Discharge Options</td>
-                <td style={{ padding: '0.75rem', borderBottom: '1px solid #eee' }}>Open top, spout top, or duffle top; flat or discharge bottom</td>
-              </tr>
-              <tr>
-                <td style={{ padding: '0.75rem', borderBottom: '1px solid #eee' }}>Printing & Identification</td>
-                <td style={{ padding: '0.75rem', borderBottom: '1px solid #eee' }}>Multi-color custom printing available</td>
-              </tr>
-            </tbody>
-          </table>
-          <p>The tunnel lift design keeps loops semi-open, allowing a forklift's tines to slide in smoothly without the need for manual assistance, making filling, stacking, and discharge operations faster and safer.</p>
-        </div>
-
-        <div className="bags-list">
           <h3>Key Applications</h3>
           <p>Tunnel Bags are highly versatile and suitable for a broad range of bulk materials, especially where frequent lifting and stacking are required. Common applications include:</p>
           <ul>

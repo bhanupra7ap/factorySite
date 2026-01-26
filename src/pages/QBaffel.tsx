@@ -57,50 +57,6 @@ const FIBC = () => {
         </div>
 
         <div className="bags-list">
-          <h3>Design & Construction</h3>
-          <p>Form-Stable Bags feature internal baffles — precision-cut panels sewn diagonally across each corner of the bag. These baffles contain dyed oval openings that allow even product distribution while keeping the bag's walls straight and square.</p>
-          <table style={{ width: '100%', borderCollapse: 'collapse', margin: '1rem 0' }}>
-            <thead>
-              <tr style={{ backgroundColor: '#f5f5f5' }}>
-                <th style={{ padding: '0.75rem', textAlign: 'left', borderBottom: '2px solid #ddd' }}>Feature</th>
-                <th style={{ padding: '0.75rem', textAlign: 'left', borderBottom: '2px solid #ddd' }}>Specification</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td style={{ padding: '0.75rem', borderBottom: '1px solid #eee' }}>Material</td>
-                <td style={{ padding: '0.75rem', borderBottom: '1px solid #eee' }}>100% Virgin Circular Woven Polypropylene</td>
-              </tr>
-              <tr>
-                <td style={{ padding: '0.75rem', borderBottom: '1px solid #eee' }}>Width Range</td>
-                <td style={{ padding: '0.75rem', borderBottom: '1px solid #eee' }}>105 cm – 112 cm (Customizable)</td>
-              </tr>
-              <tr>
-                <td style={{ padding: '0.75rem', borderBottom: '1px solid #eee' }}>Safe Working Load (SWL)</td>
-                <td style={{ padding: '0.75rem', borderBottom: '1px solid #eee' }}>500 kg – 2500 kg</td>
-              </tr>
-              <tr>
-                <td style={{ padding: '0.75rem', borderBottom: '1px solid #eee' }}>Safety Factor (SF)</td>
-                <td style={{ padding: '0.75rem', borderBottom: '1px solid #eee' }}>5:1 or 6:1</td>
-              </tr>
-              <tr>
-                <td style={{ padding: '0.75rem', borderBottom: '1px solid #eee' }}>Construction Type</td>
-                <td style={{ padding: '0.75rem', borderBottom: '1px solid #eee' }}>Circular or Four-Panel with Internal Baffles</td>
-              </tr>
-              <tr>
-                <td style={{ padding: '0.75rem', borderBottom: '1px solid #eee' }}>Handling Options</td>
-                <td style={{ padding: '0.75rem', borderBottom: '1px solid #eee' }}>Cross-Corner, Tunnel, or Lift Loops</td>
-              </tr>
-              <tr>
-                <td style={{ padding: '0.75rem', borderBottom: '1px solid #eee' }}>Filling & Discharge</td>
-                <td style={{ padding: '0.75rem', borderBottom: '1px solid #eee' }}>Multiple top and bottom options available</td>
-              </tr>
-            </tbody>
-          </table>
-          <p>A polypropylene section is attached to both the top and bottom to complete the structure, while all seams are turned outward to minimize contamination risks and improve stack stability.</p>
-        </div>
-
-        <div className="bags-list">
           <h3>Applications of Form-Stable / Q Bags</h3>
           <p>Form-Stable or Baffle FIBCs are ideal for storing and transporting fine, flowable, or light-density products that require volume optimization and shape retention. Common applications include:</p>
           <ul>

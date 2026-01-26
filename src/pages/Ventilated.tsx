@@ -27,59 +27,6 @@ const FIBC = () => {
           </p>
         </section>
 
-        <div className="bags-list">
-          <h3>Design & Construction</h3>
-          <p>
-            Ventilated Bags are made from 100% virgin polypropylene woven into a flat, breathable structure with ventilation channels. Three sections of ventilated material are sewn together with strong corner loops, forming a stable, high-capacity FIBC body.
-            An additional PP fabric panel at the top improves strength and airflow uniformity across the bag.
-          </p>
-          <table style={{ width: '100%', borderCollapse: 'collapse', margin: '1rem 0' }}>
-            <thead>
-              <tr style={{ backgroundColor: '#f5f5f5' }}>
-                <th style={{ padding: '0.75rem', textAlign: 'left', borderBottom: '2px solid #ddd' }}>Feature</th>
-                <th style={{ padding: '0.75rem', textAlign: 'left', borderBottom: '2px solid #ddd' }}>Specification</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td style={{ padding: '0.75rem', borderBottom: '1px solid #eee' }}>Material</td>
-                <td style={{ padding: '0.75rem', borderBottom: '1px solid #eee' }}>100% Virgin Ventilated Woven Polypropylene</td>
-              </tr>
-              <tr>
-                <td style={{ padding: '0.75rem', borderBottom: '1px solid #eee' }}>Fabric Type</td>
-                <td style={{ padding: '0.75rem', borderBottom: '1px solid #eee' }}>Breathable strips or mesh structure</td>
-              </tr>
-              <tr>
-                <td style={{ padding: '0.75rem', borderBottom: '1px solid #eee' }}>Width Range</td>
-                <td style={{ padding: '0.75rem', borderBottom: '1px solid #eee' }}>90 cm – 100 cm (Customizable)</td>
-              </tr>
-              <tr>
-                <td style={{ padding: '0.75rem', borderBottom: '1px solid #eee' }}>Safe Working Load (SWL)</td>
-                <td style={{ padding: '0.75rem', borderBottom: '1px solid #eee' }}>500 kg – 2500 kg</td>
-              </tr>
-              <tr>
-                <td style={{ padding: '0.75rem', borderBottom: '1px solid #eee' }}>Safety Factor (SF)</td>
-                <td style={{ padding: '0.75rem', borderBottom: '1px solid #eee' }}>5:1 or 6:1</td>
-              </tr>
-              <tr>
-                <td style={{ padding: '0.75rem', borderBottom: '1px solid #eee' }}>Top & Bottom Options</td>
-                <td style={{ padding: '0.75rem', borderBottom: '1px solid #eee' }}>Open, spout, or duffle top; flat or discharge bottom</td>
-              </tr>
-              <tr>
-                <td style={{ padding: '0.75rem', borderBottom: '1px solid #eee' }}>Handling Options</td>
-                <td style={{ padding: '0.75rem', borderBottom: '1px solid #eee' }}>4 lifting loops or tunnel loops</td>
-              </tr>
-              <tr>
-                <td style={{ padding: '0.75rem', borderBottom: '1px solid #eee' }}>Custom Features</td>
-                <td style={{ padding: '0.75rem', borderBottom: '1px solid #eee' }}>Liner fitting, branding, and color-coded stitching</td>
-              </tr>
-            </tbody>
-          </table>
-          <p>
-            Each bag is designed to combine strength, breathability, and ease of handling, making it a reliable solution for both short-term storage and long-distance transport.
-          </p>
-        </div>
-
         <div className="bags-section">
           <h3>Key Advantages of Ventilated FIBC Bags</h3>
           <p>Our ventilated FIBCs are designed to maintain product quality, freshness, and safety while optimizing efficiency in handling and logistics.</p>

@@ -27,50 +27,6 @@ const FIBC = () => {
           </p>
         </section>
 
-        <div className="bags-section">
-          <h3>Design & Construction Specifications</h3>
-          <p>Our One and Two Loop Bags are crafted using high tensile, UV-stabilized woven polypropylene fabric, offering excellent resistance to tearing, sunlight, and environmental wear.</p>
-          <table style={{ width: '100%', borderCollapse: 'collapse', margin: '1rem 0' }}>
-            <thead>
-              <tr style={{ backgroundColor: '#f5f5f5' }}>
-                <th style={{ padding: '0.75rem', textAlign: 'left', borderBottom: '2px solid #ddd' }}>Feature</th>
-                <th style={{ padding: '0.75rem', textAlign: 'left', borderBottom: '2px solid #ddd' }}>Specification</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td style={{ padding: '0.75rem', borderBottom: '1px solid #eee' }}>Material</td>
-                <td style={{ padding: '0.75rem', borderBottom: '1px solid #eee' }}>100% Virgin UV-Stabilized Woven Polypropylene</td>
-              </tr>
-              <tr>
-                <td style={{ padding: '0.75rem', borderBottom: '1px solid #eee' }}>Loop Type</td>
-                <td style={{ padding: '0.75rem', borderBottom: '1px solid #eee' }}>Integrated Single or Dual Fabric Lifting Loops</td>
-              </tr>
-              <tr>
-                <td style={{ padding: '0.75rem', borderBottom: '1px solid #eee' }}>Width</td>
-                <td style={{ padding: '0.75rem', borderBottom: '1px solid #eee' }}>Standard: 50 x 50 cm (Customizable)</td>
-              </tr>
-              <tr>
-                <td style={{ padding: '0.75rem', borderBottom: '1px solid #eee' }}>Safe Working Load (SWL)</td>
-                <td style={{ padding: '0.75rem', borderBottom: '1px solid #eee' }}>400 kg – 3000 kg</td>
-              </tr>
-              <tr>
-                <td style={{ padding: '0.75rem', borderBottom: '1px solid #eee' }}>Safety Factor (SF)</td>
-                <td style={{ padding: '0.75rem', borderBottom: '1px solid #eee' }}>5:1 or 6:1</td>
-              </tr>
-              <tr>
-                <td style={{ padding: '0.75rem', borderBottom: '1px solid #eee' }}>Liner Option</td>
-                <td style={{ padding: '0.75rem', borderBottom: '1px solid #eee' }}>LDPE or HDPE liner for moisture protection</td>
-              </tr>
-              <tr>
-                <td style={{ padding: '0.75rem', borderBottom: '1px solid #eee' }}>Outer Sleeve Colors</td>
-                <td style={{ padding: '0.75rem', borderBottom: '1px solid #eee' }}>Custom-colored sleeves for product identification</td>
-              </tr>
-            </tbody>
-          </table>
-          <p>The fabric itself extends into the lifting loops, providing high breaking strength and simplifying the handling process — ideal for mechanized lifting and stacking.</p>
-        </div>
-
         <div className="bags-list">
           <h3>Key Applications</h3>
           <p>One and Two Loop FIBCs are widely used across sectors requiring bulk, lightweight, and stackable storage. Common applications include:</p>

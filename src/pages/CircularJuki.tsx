@@ -57,50 +57,6 @@ const FIBC = () => {
         </div>
 
         <div className="bags-list">
-          <h3>Design & Specifications</h3>
-          <p>Our Circular / Tubular FIBCs are available in standard and custom-built sizes to suit varied industry needs:</p>
-          <table style={{ width: '100%', borderCollapse: 'collapse', margin: '1rem 0' }}>
-            <thead>
-              <tr style={{ backgroundColor: '#f5f5f5' }}>
-                <th style={{ padding: '0.75rem', textAlign: 'left', borderBottom: '2px solid #ddd' }}>Feature</th>
-                <th style={{ padding: '0.75rem', textAlign: 'left', borderBottom: '2px solid #ddd' }}>Specification</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td style={{ padding: '0.75rem', borderBottom: '1px solid #eee' }}>Material</td>
-                <td style={{ padding: '0.75rem', borderBottom: '1px solid #eee' }}>100% Virgin Circular Woven Polypropylene</td>
-              </tr>
-              <tr>
-                <td style={{ padding: '0.75rem', borderBottom: '1px solid #eee' }}>Width Range</td>
-                <td style={{ padding: '0.75rem', borderBottom: '1px solid #eee' }}>90 cm – 100 cm (Customizable)</td>
-              </tr>
-              <tr>
-                <td style={{ padding: '0.75rem', borderBottom: '1px solid #eee' }}>Safe Working Load (SWL)</td>
-                <td style={{ padding: '0.75rem', borderBottom: '1px solid #eee' }}>500 kg – 2500 kg</td>
-              </tr>
-              <tr>
-                <td style={{ padding: '0.75rem', borderBottom: '1px solid #eee' }}>Safety Factor (SF)</td>
-                <td style={{ padding: '0.75rem', borderBottom: '1px solid #eee' }}>5:1 or 6:1</td>
-              </tr>
-              <tr>
-                <td style={{ padding: '0.75rem', borderBottom: '1px solid #eee' }}>Lifting Options</td>
-                <td style={{ padding: '0.75rem', borderBottom: '1px solid #eee' }}>Cross-Corner or Tunnel Loops</td>
-              </tr>
-              <tr>
-                <td style={{ padding: '0.75rem', borderBottom: '1px solid #eee' }}>Filling & Discharge</td>
-                <td style={{ padding: '0.75rem', borderBottom: '1px solid #eee' }}>Various Top and Bottom Designs Available</td>
-              </tr>
-              <tr>
-                <td style={{ padding: '0.75rem', borderBottom: '1px solid #eee' }}>Handling</td>
-                <td style={{ padding: '0.75rem', borderBottom: '1px solid #eee' }}>Easily maneuverable with forklift or crane</td>
-              </tr>
-            </tbody>
-          </table>
-          <p>The tubular construction eliminates the need for vertical seams, providing greater resistance to tearing and ensuring uniform load distribution.</p>
-        </div>
-
-        <div className="bags-list">
           <h3>Key Applications</h3>
           <p>Circular FIBCs are widely used across industries due to their robust construction and adaptability. Typical uses include packaging and transporting:</p>
           <ul>

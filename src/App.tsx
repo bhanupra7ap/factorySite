@@ -9,7 +9,6 @@ import Certifications from './pages/Certifications';
 import BuilderBag from './pages/BuilderBag';
 import CircularJuki from './pages/CircularJuki';
 import Conical from './pages/Conical';
-import FoodGrade from './pages/FoodGrade';
 import FourPanel from './pages/FourPanel';
 import OneTwoLoop from './pages/OneTwoLoop';
 import QBaffel from './pages/QBaffel';
@@ -40,7 +39,6 @@ function App() {
             <Route path="/builder-bag" element={<BuilderBag />} />
             <Route path="/circular-juki" element={<CircularJuki />} />
             <Route path="/conical" element={<Conical />} />
-            <Route path="/food-grade" element={<FoodGrade />} />
             <Route path="/four-panel" element={<FourPanel />} />
             <Route path="/one-two-loop" element={<OneTwoLoop />} />
             <Route path="/q-baffel" element={<QBaffel />} />

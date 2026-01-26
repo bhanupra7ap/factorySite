@@ -1,21 +1,49 @@
 // Removed unused imports to fix build errors
-import headerImg from "../assets/quality-header.avif";
+import headerImg from "../assets/quality-header.png";
+import commitmentToQuality from "../assets/quality-commitment-to-quality.png";
+import inhouseTesting from "../assets/quality-inhouse-testing-and-control.png";
+import teamAndTraining from "../assets/quality-team-and-training.png";
+import lookingAhead from "../assets/quality-looking-ahead.png";
+import ourQualityPhilosophy from "../assets/quality-our-quality-philosophy.png";
 import altQualityImg from "../assets/non-woven-header.avif";
 import "./Quality.css";
 
 const policies = [
-  "Product Quality & Safety",
-  "Hygiene & Workplace Safety",
-  "Environmental Responsibility",
-  "Ethical Sourcing & Integrity",
-  "Employee Welfare",
+  {
+    title: "Product Quality & Safety",
+    description: "We implement rigorous quality control measures at every production stage. From raw material inspection to final product testing, we ensure our FIBC bags and non-woven products meet stringent strength, durability, and safety standards to protect your goods during storage and transportation."
+  },
+  {
+    title: "Hygiene & Workplace Safety",
+    description: "Maintaining clean production environments and safe working conditions is paramount. Our facilities follow strict hygiene protocols and safety standards to protect our workforce and ensure product integrity. Regular safety audits and training programs keep our team prepared and protected."
+  },
+  {
+    title: "Environmental Responsibility",
+    description: "We are committed to minimizing our environmental footprint through responsible manufacturing practices. This includes optimizing resource usage, reducing waste, implementing recycling initiatives, and exploring eco-friendly materials to contribute to a sustainable future."
+  },
+  {
+    title: "Ethical Sourcing & Integrity",
+    description: "We maintain transparent and ethical relationships with our suppliers and partners. Our sourcing practices prioritize quality, fair trade, and compliance with legal standards. We believe in conducting business with honesty, integrity, and respect for all stakeholders."
+  },
+  {
+    title: "Employee Welfare",
+    description: "Our employees are our greatest asset. We provide fair compensation, safe working conditions, opportunities for professional growth, and a supportive work environment. We believe that investing in our people directly translates to better quality and service for our customers."
+  },
 ];
 
 const Quality = () => {
   return (
     <div className="page">
       {/* Hero with header image */}
-      <div className="header-image quality-header">
+      <div 
+        className="header-image quality-header"
+        style={{
+          backgroundImage: `url(${headerImg})`,
+          backgroundSize: 'cover',
+          backgroundPosition: 'center',
+          backgroundRepeat: 'no-repeat'
+        }}
+      >
         <h1 className="header-title">Quality at Our Core</h1>
       </div>
 
@@ -36,7 +64,7 @@ const Quality = () => {
                 </p>
               </div>
               <div className="theme-media">
-                <img src={headerImg} alt="Commitment to quality" loading="lazy" />
+                <img src={commitmentToQuality} alt="Commitment to quality" loading="lazy" />
               </div>
             </div>
 
@@ -51,7 +79,7 @@ const Quality = () => {
                 </p>
               </div>
               <div className="theme-media">
-                <img src={altQualityImg} alt="Our quality philosophy" loading="lazy" />
+                <img src={ourQualityPhilosophy} alt="Our quality philosophy" loading="lazy" />
               </div>
             </div>
 
@@ -67,7 +95,7 @@ const Quality = () => {
                 </p>
               </div>
               <div className="theme-media">
-                <img src={altQualityImg} alt="In-house testing and control" loading="lazy" />
+                <img src={inhouseTesting} alt="In-house testing and control" loading="lazy" />
               </div>
             </div>
 
@@ -83,7 +111,7 @@ const Quality = () => {
                 </p>
               </div>
               <div className="theme-media">
-                <img src={headerImg} alt="Team and training" loading="lazy" />
+                <img src={teamAndTraining} alt="Team and training" loading="lazy" />
               </div>
             </div>
 
@@ -99,7 +127,7 @@ const Quality = () => {
                 </p>
               </div>
               <div className="theme-media">
-                <img src={altQualityImg} alt="Looking ahead" loading="lazy" />
+                <img src={lookingAhead} alt="Looking ahead" loading="lazy" />
               </div>
             </div>
           </div>
@@ -113,7 +141,7 @@ const Quality = () => {
           <ul className="policy-timeline" role="list" aria-label="Policy timeline">
             {policies.map((policy, idx) => (
               <li
-                key={policy}
+                key={policy.title}
                 className={`timeline-item ${idx % 2 === 0 ? "left" : "right"}`}
                 role="listitem"
               >
@@ -121,9 +149,9 @@ const Quality = () => {
                 <div className="spacer" aria-hidden />
                 <div className="dot" aria-hidden />
                 <div className="timeline-card" tabIndex={0}>
-                  <h3>{policy}</h3>
+                  <h3>{policy.title}</h3>
                   <p>
-                    Our internal guidelines ensure consistency and accountability in every production stage.
+                    {policy.description}
                   </p>
                 </div>
               </li>

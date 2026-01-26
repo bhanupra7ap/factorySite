@@ -57,46 +57,6 @@ const FIBC = () => {
         </div>
 
         <div className="bags-list">
-          <h3>Design & Construction Specifications</h3>
-          <p>Conical FIBCs feature a cone-shaped bottom or top section that enhances gravity-assisted flow during discharge. The bags are fabricated using 100% virgin polypropylene fabric to maintain strength, cleanliness, and material safety.</p>
-          <table style={{ width: '100%', borderCollapse: 'collapse', margin: '1rem 0' }}>
-            <thead>
-              <tr style={{ backgroundColor: '#f5f5f5' }}>
-                <th style={{ padding: '0.75rem', textAlign: 'left', borderBottom: '2px solid #ddd' }}>Feature</th>
-                <th style={{ padding: '0.75rem', textAlign: 'left', borderBottom: '2px solid #ddd' }}>Specification</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td style={{ padding: '0.75rem', borderBottom: '1px solid #eee' }}>Body Shape</td>
-                <td style={{ padding: '0.75rem', borderBottom: '1px solid #eee' }}>Conical top and/or bottom for smooth flow</td>
-              </tr>
-              <tr>
-                <td style={{ padding: '0.75rem', borderBottom: '1px solid #eee' }}>Material</td>
-                <td style={{ padding: '0.75rem', borderBottom: '1px solid #eee' }}>100% Virgin Woven Polypropylene</td>
-              </tr>
-              <tr>
-                <td style={{ padding: '0.75rem', borderBottom: '1px solid #eee' }}>Safe Working Load (SWL)</td>
-                <td style={{ padding: '0.75rem', borderBottom: '1px solid #eee' }}>500 kg – 2000 kg</td>
-              </tr>
-              <tr>
-                <td style={{ padding: '0.75rem', borderBottom: '1px solid #eee' }}>Safety Factor (SF)</td>
-                <td style={{ padding: '0.75rem', borderBottom: '1px solid #eee' }}>5:1 or 6:1</td>
-              </tr>
-              <tr>
-                <td style={{ padding: '0.75rem', borderBottom: '1px solid #eee' }}>Filling & Discharge Options</td>
-                <td style={{ padding: '0.75rem', borderBottom: '1px solid #eee' }}>Custom spouts, liners, or plain tops</td>
-              </tr>
-              <tr>
-                <td style={{ padding: '0.75rem', borderBottom: '1px solid #eee' }}>Customization</td>
-                <td style={{ padding: '0.75rem', borderBottom: '1px solid #eee' }}>Size, coating, and printing available</td>
-              </tr>
-            </tbody>
-          </table>
-          <p>Each bag can be integrated with a discharge spout or duffle bottom, allowing fast and clean emptying without manual handling or vibration systems.</p>
-        </div>
-
-        <div className="bags-list">
           <h3>Key Applications</h3>
           <p>Conical Bags are ideal for industries where product flowability and hygiene are crucial. Common applications include:</p>
           <ul>

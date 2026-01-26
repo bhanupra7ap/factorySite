@@ -27,56 +27,6 @@ const FIBC = () => {
         </section>
 
         <div className="bags-section">
-          <h3>Design & Construction</h3>
-          <p>
-            The U Panel design consists of one continuous piece of fabric forming the bottom and two opposing sides ("U" shape), stitched together with two separate side panels. This construction provides reinforced strength at the base, reduced stress points, and better weight distribution.
-          </p>
-          <table style={{ width: '100%', borderCollapse: 'collapse', margin: '1rem 0' }}>
-            <thead>
-              <tr style={{ backgroundColor: '#f5f5f5' }}>
-                <th style={{ padding: '0.75rem', textAlign: 'left', borderBottom: '2px solid #ddd' }}>Feature</th>
-                <th style={{ padding: '0.75rem', textAlign: 'left', borderBottom: '2px solid #ddd' }}>Specification</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td style={{ padding: '0.75rem', borderBottom: '1px solid #eee' }}>Material</td>
-                <td style={{ padding: '0.75rem', borderBottom: '1px solid #eee' }}>100% Virgin Flat-Woven Polypropylene</td>
-              </tr>
-              <tr>
-                <td style={{ padding: '0.75rem', borderBottom: '1px solid #eee' }}>Shape</td>
-                <td style={{ padding: '0.75rem', borderBottom: '1px solid #eee' }}>U-shaped body with two stitched side panels</td>
-              </tr>
-              <tr>
-                <td style={{ padding: '0.75rem', borderBottom: '1px solid #eee' }}>Width Range</td>
-                <td style={{ padding: '0.75rem', borderBottom: '1px solid #eee' }}>90 cm – 100 cm (Customizable)</td>
-              </tr>
-              <tr>
-                <td style={{ padding: '0.75rem', borderBottom: '1px solid #eee' }}>Safe Working Load (SWL)</td>
-                <td style={{ padding: '0.75rem', borderBottom: '1px solid #eee' }}>500 kg – 2500 kg</td>
-              </tr>
-              <tr>
-                <td style={{ padding: '0.75rem', borderBottom: '1px solid #eee' }}>Safety Factor (SF)</td>
-                <td style={{ padding: '0.75rem', borderBottom: '1px solid #eee' }}>5:1 or 6:1</td>
-              </tr>
-              <tr>
-                <td style={{ padding: '0.75rem', borderBottom: '1px solid #eee' }}>Lifting Loops</td>
-                <td style={{ padding: '0.75rem', borderBottom: '1px solid #eee' }}>Corner or Cross-Corner Loops</td>
-              </tr>
-              <tr>
-                <td style={{ padding: '0.75rem', borderBottom: '1px solid #eee' }}>Top/Bottom Options</td>
-                <td style={{ padding: '0.75rem', borderBottom: '1px solid #eee' }}>Spout, Duffle, Open, or Flat Bottom</td>
-              </tr>
-              <tr>
-                <td style={{ padding: '0.75rem', borderBottom: '1px solid #eee' }}>Custom Options</td>
-                <td style={{ padding: '0.75rem', borderBottom: '1px solid #eee' }}>Printing, Liners, Anti-Static, or Food-Grade Fabric</td>
-              </tr>
-            </tbody>
-          </table>
-          <p>This robust yet flexible design provides excellent structural integrity and easy handling, making it ideal for both automated and manual filling systems.</p>
-        </div>
-
-        <div className="bags-section">
           <h3>Key Advantages of U Panel FIBC Bags</h3>
           <div className="bags-features">
             <div className="feature-card">

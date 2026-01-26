@@ -14,7 +14,7 @@ const WPPSacks = () => {
         }}
       >
         <div className="bags-hero-content">
-          <h1>WPP FIBC Sacks</h1>
+          <h1>WPP Sacks</h1>
           <p className="bags-hero-subtitle">Durable, Reliable & Cost-Effective Bulk Packaging</p>
         </div>
       </div>
@@ -23,7 +23,7 @@ const WPPSacks = () => {
         <section className="intro">
           <h3>Woven Polypropylene Bulk Bags</h3>
           <p className="alt">
-            Our Woven Polypropylene (WPP) FIBC Sacks are engineered for superior
+            Our Woven Polypropylene (WPP) Sacks are engineered for superior
             strength, versatility, and performance in heavy-duty packaging
             applications. Designed to store and transport large volumes of dry,
             flowable materials, these sacks combine resilience with lightweight
@@ -36,10 +36,10 @@ const WPPSacks = () => {
 
         <div className="bags-image-section">
           <div className="section-image" style={{ background: '#f0f0f0', display: 'flex', alignItems: 'center', justifyContent: 'center', color: '#999' }}>
-            <img src={wppSackImg1} alt="WPP FIBC Sacks Quality" />
+            <img src={wppSackImg1} alt="WPP Sacks Quality" />
           </div>
           <div className="section-content">
-            <h3>What Are WPP FIBC Sacks?</h3>
+            <h3>What Are WPP Sacks?</h3>
             <p>
               WPP (Woven Polypropylene) sacks are flexible, strong, and reusable
               packaging containers made from woven strips of polypropylene. This
@@ -48,7 +48,7 @@ const WPPSacks = () => {
               during transport and storage.
             </p>
             <p>
-              Depending on your application, these FIBCs can be customized in
+              Depending on your application, these WPP sacks can be customized in
               terms of fabric type, coating, and lifting configurations to meet
               your specific packaging requirements.
             </p>
@@ -92,14 +92,14 @@ const WPPSacks = () => {
             </div>
           </div>
           <p style={{ marginTop: '2rem' }} className="alt">
-            Each WPP FIBC sack is engineered to provide exceptional performance
+            Each WPP sack is engineered to provide exceptional performance
             while maintaining cost efficiency and environmental responsibility.
           </p>
         </div>
 
         <div className="bags-image-section reverse">
           <div className="section-image" style={{ background: '#f0f0f0', display: 'flex', alignItems: 'center', justifyContent: 'center', color: '#999' }}>
-            <img src={wppSackImg2} alt="WPP FIBC Applications" />
+            <img src={wppSackImg2} alt="WPP Applications" />
           </div>
           <div className="section-content">
             <h3>Wide Range of Applications</h3>
@@ -131,12 +131,12 @@ const WPPSacks = () => {
 
         <div className="bags-image-section">
           <div className="section-image" style={{ background: '#f0f0f0', display: 'flex', alignItems: 'center', justifyContent: 'center', color: '#999' }}>
-            <img src={wppSackImg3} alt="WPP FIBC Advantages" />
+            <img src={wppSackImg3} alt="WPP Advantages" />
           </div>
           <div className="section-content">
             <h3>Quality & Manufacturing Standards</h3>
             <p>
-              Our WPP FIBC sacks are produced under stringent quality control
+              Our WPP sacks are produced under stringent quality control
               processes that ensure consistency, reliability, and compliance with
               international packaging standards.
             </p>
@@ -149,7 +149,7 @@ const WPPSacks = () => {
         </div>
 
         <div className="sustainability-section">
-          <h3>Advantages of Choosing WPP FIBC Sacks</h3>
+          <h3>Advantages of Choosing WPP Sacks</h3>
           <p>
             Our commitment to excellence ensures every bag meets the highest standards,
             delivering reliable packaging solutions that protect your valuable products.

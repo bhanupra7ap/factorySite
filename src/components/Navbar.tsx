@@ -227,9 +227,6 @@ const Navbar = () => {
                   <Link to="/type-abc" className="dropdown-item">
                     Types- A, B & C
                   </Link>
-                  <Link to="/food-grade" className="dropdown-item">
-                    Food Grade Bags
-                  </Link>
                   <Link to="/rpp" className="dropdown-item">
                     RPP
                   </Link>

@@ -37,14 +37,10 @@
 }
 /* Styles specific to the Quality page */
 
-/* Use WhoWeAre's .header-image base styles and only override the background */
+/* Use WhoWeAre's .header-image base styles and only override the height */
 .header-image.quality-header {
-  background-image: url('../assets/quality-header.png');
   height: 576px;
   max-height: 576px;
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
 }
 
 @media (max-width: 1024px) {
@@ -369,23 +365,26 @@
 }
 
 .theme-media img {
-  width: 100%;
-  height: 100%; /* match text column height */
+  width: 70%; /* Make smaller - 70% instead of 100% */
+  max-width: 350px; /* Limit maximum width for rectangular shape */
+  height: auto; /* Maintain aspect ratio */
   object-fit: cover;
-  border-radius: 12px;
+  border-radius: 16px; /* More pronounced curved corners */
   box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
 }
 
-/* Ensure the image always fills its column and matches the text card height */
+/* Ensure the image is centered within its container */
 .theme-media {
-  display: flex; /* allow child img to stretch */
+  display: flex; /* allow child img to be centered */
+  align-items: center;
+  justify-content: center;
 }
 .theme-media > img {
-  flex: 1 1 auto;
-  height: 100%;
-  width: 100%;
+  width: 70%; /* Make smaller - 70% instead of 100% */
+  max-width: 350px; /* Rectangular constraint */
+  height: 220px; /* Fixed height for rectangular shape */
   object-fit: cover; /* crop to fill without distortion */
-  min-height: 220px; /* keep a pleasant size when text is short on desktop */
+  border-radius: 16px; /* Curved corners */
 }
 
 /* Stack alternating rows on narrow screens */
@@ -394,7 +393,10 @@
   .theme-row.reverse {
     flex-direction: column;
   }
-  .theme-media img {
-    height: 200px; /* fixed height when stacked */
+  .theme-media > img {
+    width: 90%; /* Slightly larger on mobile for better visibility */
+    max-width: 100%;
+    height: 200px; /* Fixed height when stacked */
+    border-radius: 12px; /* Slightly less rounded on mobile */
   }
 }
