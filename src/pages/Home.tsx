@@ -1,8 +1,8 @@
 import "./Home.css";
 import headerImg from "../assets/home-header.png";
-import facilitiesImg from "../assets/facilities-header.jpg";
-import qualityImg from "../assets/quality-header.avif";
-import wppFabricImg from "../assets/wpp-fabric-header.avif";
+import integrated from "../assets/home-integrated.png";
+import responsible from "../assets/home-responsible.png";
+import technology from "../assets/home-technology.png";
 import { useEffect, useMemo, useRef, useState } from "react";
 import { Link } from "react-router-dom";
 import foodLogo from "../assets/industries/food.png";
@@ -24,17 +24,17 @@ const Home = () => {
     {
       title: "Integrated Manufacturing from Tape to FIBC Bags",
       text: "Aries Packtech Pvt. Ltd. is a vertically integrated manufacturer of high-strength FIBC bags — from tape extrusion to fabric weaving and bag conversion — ensuring consistent quality, flexible production, and cost-efficient solutions for diverse industrial needs.",
-      image: facilitiesImg,
+      image: integrated,
     },
     {
       title: "Committed to Responsible Manufacturing",
       text: "At Aries Packtech Pvt. Ltd., sustainability drives every process, with focused efforts on recycling, renewable energy, and water management to achieve responsible and efficient manufacturing.",
-      image: qualityImg,
+      image: responsible,
     },
     {
       title: "Adopting Technology for Smarter Production",
       text: "Technology powers Aries Packtech Pvt. Ltd.’s efficiency and precision — with digitally monitored, data-driven production lines that ensure consistent quality and globally competitive FIBC solutions.",
-      image: wppFabricImg,
+      image: technology,
     },
   ];
 

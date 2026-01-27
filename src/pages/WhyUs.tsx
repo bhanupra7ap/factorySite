@@ -1,7 +1,12 @@
-import headerImg from "../assets/fibc-header.png";
-import facilitiesImg from "../assets/facilities-header.jpg";
-import qualityImg from "../assets/quality-header.avif";
-import wppFabricImg from "../assets/wpp-fabric-header.avif";
+import operationRelaibility from "../assets/why-us-reliability.png";
+import overview from "../assets/why-us-overview.png";
+import commitmentToQuality from "../assets/why-us-quality.png";
+import sustainability from "../assets/why-us-sustainability.png";
+import integratedManufacturing from "../assets/why-us-integrated.png";
+import innovation from "../assets/why-us-innovation.png";
+import customization from "../assets/why-us-customization.png";
+import ourVision from "../assets/why-us-vision.png";
+import customerPartnership from "../assets/why-us-partnership.png";
 import "./WhyUs.css";
 import { useEffect, useRef, useState } from "react";
 
@@ -9,47 +14,47 @@ const sections = [
   {
     title: "Overview",
     text: `At Aries Packtech Pvt. Ltd., excellence is not an option — it is an ongoing pursuit. We are an emerging manufacturer of industrial packaging products, dedicated to delivering dependable and high-performance solutions for diverse industries. Our focus lies in maintaining superior quality standards, ensuring consistency across production, and building relationships founded on trust and integrity.`,
-    image: facilitiesImg,
+    image: overview,
   },
   {
     title: "Commitment to Quality",
     text: `Quality defines every process within Aries Packtech Pvt. Ltd.. Each stage — from extrusion and weaving to finishing and inspection — is governed by stringent internal benchmarks that guarantee structural strength, dimensional accuracy, and product uniformity. We have implemented systematic quality control procedures, ensuring that every batch adheres to both customer specifications and global industrial norms. Our organization is currently in the process of acquiring recognized certifications to further formalize and strengthen our quality management systems.`,
-    image: qualityImg,
+    image: commitmentToQuality,
   },
   {
     title: "Integrated Manufacturing Excellence",
     text: `Our operations are built on a vertically integrated structure that gives us complete command over raw materials, production flow, and final output. From the creation of tapes to the weaving of fabric and conversion into finished packaging products, every process is executed within a controlled environment. This integration not only minimizes dependency on external sources but also allows us to maintain consistency, traceability, and cost efficiency throughout the production chain.`,
-    image: wppFabricImg,
+    image: integratedManufacturing,
   },
   {
     title: "Customization and Design Flexibility",
     text: `We recognize that every client’s requirement is distinct. Our design and development team works closely with customers to engineer packaging solutions that align perfectly with their handling, storage, and transportation needs. Whether the requirement involves specific dimensions, lifting configurations, or fabric specifications, Aries Packtech Pvt. Ltd. provides complete flexibility to adapt and innovate.`,
-    image: facilitiesImg,
+    image: customization,
   },
   {
     title: "Operational Reliability",
     text: `We take pride in our ability to deliver commitments with precision and punctuality. Efficient planning, streamlined logistics, and real-time production monitoring enable us to execute orders within the promised timelines. Our infrastructure is designed to handle varying order volumes while maintaining uncompromised quality, making us a dependable partner for both domestic and international clients.`,
-    image: qualityImg,
+    image: operationRelaibility,
   },
   {
     title: "Innovation and Continuous Improvement",
     text: `Aries Packtech Pvt. Ltd. constantly seeks new methods to enhance performance and productivity. We invest time and effort into improving process efficiency, adopting advanced weaving techniques, and exploring eco-friendly materials. Our commitment to innovation allows us to remain relevant and responsive in a continuously evolving market.`,
-    image: wppFabricImg,
+    image: innovation,
   },
   {
     title: "Customer Partnership",
     text: `For us, every client relationship is a long-term collaboration built on understanding, responsiveness, and accountability. We prioritize transparent communication, prompt service, and post-delivery support to ensure complete satisfaction. Our growing base of recurring customers reflects the trust we have earned through consistent performance and professional conduct.`,
-    image: facilitiesImg,
+    image: customerPartnership,
   },
   {
     title: "Sustainability and Responsibility",
     text: `We are conscious of our environmental footprint and actively strive to optimize material usage and reduce waste generation. By adopting sustainable practices and responsible manufacturing principles, Aries Packtech Pvt. Ltd. aims to contribute positively to the environment while meeting modern packaging demands.`,
-    image: qualityImg,
+    image: sustainability,
   },
   {
     title: "Our Vision Forward",
     text: `Our vision is to become a recognized and respected name in the industrial packaging sector by combining technical competence, operational discipline, and customer-centric innovation. As we expand our capabilities and move toward achieving formal certifications, we remain steadfast in our mission — to provide packaging solutions that are reliable, efficient, and aligned with our clients’ business goals.`,
-    image: wppFabricImg,
+    image: ourVision,
   },
 ];
 
@@ -97,7 +102,7 @@ const WhyUs = () => {
       <div
         className="header-image"
         style={{
-          backgroundImage: `url(${headerImg})`,
+          backgroundImage: `url(${customization})`,
         }}
       >
         <h1 className="header-title">Why Choose Aries Packtech Pvt. Ltd.</h1>

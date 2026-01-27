@@ -1,8 +1,10 @@
 import headerImg from "../assets/who-we-are-header.png";
 import facilitiesImg from "../assets/home-header.png";
-import imgSustainability from "../assets/non-woven-header.avif";
-import imgCustomers from "../assets/contact-header.avif";
-import imgInnovation from "../assets/facilities-header.jpg";
+import imgPhilosophy from "../assets/who-we-are-philosophy.png";
+import imgSustainability from "../assets/who-we-are-sustainibility.png";
+import imgCustomers from "../assets/who-we-are-commitment.png";
+import imgResponsibility from "../assets/who-we-are-responsibility.png";
+import imgInnovation from "../assets/who-we-are-innovation.png";
 import "./WhoWeAre.css";
 
 const WhoWeAre = () => {
@@ -62,13 +64,7 @@ const WhoWeAre = () => {
               </p>
             </div>
             <div className="theme-media">
-              <div className="media-box" aria-hidden={true}>
-                {/* Compass icon */}
-                <svg width="80" height="80" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <circle cx="12" cy="12" r="9" stroke="currentColor" strokeWidth="1.7" />
-                  <path d="M15.5 8.5l-3 7-7 3 3-7 7-3z" stroke="currentColor" strokeWidth="1.7" strokeLinejoin="round" />
-                </svg>
-              </div>
+              <img src={imgPhilosophy} alt="Our Philosophy" loading="lazy" />
             </div>
           </div>
 
@@ -140,13 +136,7 @@ const WhoWeAre = () => {
               </p>
             </div>
             <div className="theme-media">
-              <div className="media-box" aria-hidden={true}>
-                {/* Globe icon */}
-                <svg width="80" height="80" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <circle cx="12" cy="12" r="9" stroke="currentColor" strokeWidth="1.7" />
-                  <path d="M3 12h18M12 3c3 3 3 15 0 18M12 3c-3 3-3 15 0 18" stroke="currentColor" strokeWidth="1.3" strokeLinecap="round" />
-                </svg>
-              </div>
+              <img src={imgResponsibility} alt="Responsibility toward society" loading="lazy" />
             </div>
           </div>
 
