@@ -22,8 +22,8 @@ const Home = () => {
   // Predefined principles data — length is dynamic and will control rendering
   const timeline: TimelineItem[] = [
     {
-      title: "Integrated Manufacturing from Tape to FIBC Bags",
-      text: "Aries Packtech Pvt. Ltd. is a vertically integrated manufacturer of high-strength FIBC bags — from tape extrusion to fabric weaving and bag conversion — ensuring consistent quality, flexible production, and cost-efficient solutions for diverse industrial needs.",
+      title: "Integrated Manufacturing",
+      text: "Aries Packtech Pvt. Ltd. is a vertically integrated manufacturer of high-strength FIBC bags — from bag conversion — ensuring consistent quality, flexible production, and cost-efficient solutions for diverse industrial needs.",
       image: integrated,
     },
     {
