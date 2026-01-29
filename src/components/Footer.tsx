@@ -43,7 +43,7 @@ const Footer = () => {
           </div>
         </div>
         
-        <div className="social-section">
+        {/* <div className="social-section">
           <h3>Follow Us</h3>
           <div className="social-links">
             <a href="https://www.linkedin.com/company/111493268" className="social-link" aria-label="LinkedIn">
@@ -59,7 +59,7 @@ const Footer = () => {
               <FaInstagram />
             </a>
           </div>
-        </div>
+        </div> */}
       </div>
       
       <div className="footer-bottom">
