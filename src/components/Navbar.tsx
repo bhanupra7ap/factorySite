@@ -1,6 +1,7 @@
 import { useState, useRef, useEffect } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import logo from '../assets/logo_nav.png';
+import brochure from '../assets/brochure/Aries-Brochure.pdf';
 import './Navbar.css';
 
 const Navbar = () => {
@@ -9,6 +10,7 @@ const Navbar = () => {
   const [isAboutOpen, setIsAboutOpen] = useState(false);
   const [isProductsOpen, setIsProductsOpen] = useState(false);
   const [isMobileOpen, setIsMobileOpen] = useState(false);
+  const location = useLocation();
   const aboutTimeoutRef = useRef<NodeJS.Timeout | null>(null);
   const productsTimeoutRef = useRef<NodeJS.Timeout | null>(null);
   const aboutTouchOpenedRef = useRef(false);
@@ -112,6 +114,13 @@ const Navbar = () => {
   }, []);
 
   useEffect(() => {
+    setIsMobileOpen(false);
+    setIsAboutOpen(false);
+    setIsProductsOpen(false);
+    window.scrollTo({ top: 0, left: 0, behavior: 'instant' as ScrollBehavior });
+  }, [location.pathname]);
+
+  useEffect(() => {
     return () => {
       if (aboutTimeoutRef.current) clearTimeout(aboutTimeoutRef.current);
       if (productsTimeoutRef.current) clearTimeout(productsTimeoutRef.current);
@@ -146,7 +155,7 @@ const Navbar = () => {
   }, [isAtTop]);
 
   return (
-  <nav ref={navRef} className={`navbar ${isAtTop ? 'full' : ''} ${!isAtTop && !isMobileOpen ? 'floating' : ''} ${isScrolled ? 'scrolled' : ''}`}>
+  <nav ref={navRef} className={`navbar ${isAtTop ? 'full' : 'floating'} ${isScrolled ? 'scrolled' : ''}`}>
       <div className="navbar-container">
         <Link to="/" className="navbar-logo">
           <img src={logo} alt="Company Logo" className="logo-image" />
@@ -281,6 +290,16 @@ const Navbar = () => {
           <Link to="/contact" className="navbar-item" onClick={() => isMobileOpen && setIsMobileOpen(false)}>
             Contact Us
           </Link>
+
+          <a
+            href={brochure}
+            className="navbar-item"
+            target="_blank"
+            rel="noopener noreferrer"
+            onClick={() => isMobileOpen && setIsMobileOpen(false)}
+          >
+            Brochure
+          </a>
         </div>
       </div>
     </nav>

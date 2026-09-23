@@ -27,7 +27,7 @@ const Footer = () => {
             <div className="address">
               <span className="contact-icon">📍</span>
               <div>
-                <p>Ayodhya, Uttar Pradesh</p>
+                <p>Varanasi, Uttar Pradesh</p>
                 <p>India</p>
               </div>
             </div>
@@ -63,7 +63,7 @@ const Footer = () => {
       </div>
       
       <div className="footer-bottom">
-        <p>&copy; 2025 Aries Packtech Pvt. Ltd.. All rights reserved.</p>
+        <p>&copy; 2026 Aries Packtech Pvt. Ltd.. All rights reserved.</p>
       </div>
     </footer>
   );
